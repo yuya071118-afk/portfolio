@@ -1,0 +1,427 @@
+@charset "utf-8";
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: #FAF4ED;
+  color: #444;
+}
+
+a{
+  color: #444;
+  text-decoration: none;
+}
+
+.wrap{
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+.lira_top .hero{
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero_ttl,.hero_sub,.atm__ttl{
+  font-family: 'Zen Old Mincho', serif;
+  color: #fff;
+}
+
+.lira_top .hero::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("img/hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  transform: scale(1.06);
+  transform-origin: center center;
+  z-index: 0;
+}
+
+.lira_top .hero::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0,0,0,0.45) 0%,
+    rgba(0,0,0,0.20) 28%,
+    rgba(0,0,0,0.05) 50%,
+    rgba(0,0,0,0) 72%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.lira_top .hero .wrap{
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+}
+
+.lira_top .hero,
+.lira_top .hero a{
+  color: #fff;
+}
+
+.logo_img{
+  width: 76px;
+  height: auto;
+  display: block;
+  position: relative;
+  top: 28px;
+}
+
+.nav_list{
+  display: flex;
+  gap: 56px;
+  list-style: none;
+  margin-top: 32px;
+}
+
+.nav_item{
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-family: 'Playfair Display', serif;
+}
+
+.hero_head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero_ttl{
+  margin-top: 150px;
+  margin-bottom: 88px;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 3px;
+}
+
+.hero_sub{
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  margin-bottom: 96px;
+}
+
+.info_cta_text{
+  border: 1px solid #fff;
+  border-radius: 2px;
+  padding: 10px 64px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.sec{
+  padding: 0;
+}
+
+
+/*atm*/
+
+.atm{
+  position: relative;
+  color: #fff;
+  overflow: hidden;
+}
+
+.atm::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("img/img1.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center center;
+  z-index: 0;
+}
+
+.atm::after{
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0,0,0,0.45) 0%,
+    rgba(0,0,0,0.24) 24%,
+    rgba(0,0,0,0.10) 42%,
+    rgba(0,0,0,0) 68%
+  );
+  z-index: 0;
+}
+
+.atm .wrap{
+  position: relative;
+  z-index: 1;
+  min-height: 970px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.atm__box{
+  padding-top: 200px;
+  max-width: 420px;
+}
+
+.atm__ttl{
+  font-family: 'Zen Old Mincho', serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 4;
+  letter-spacing: 0.08em;
+  color: #fff;
+}
+
+/*menu*/
+
+.menu{
+  padding: 80px 0 120px;
+}
+
+.menu__head{
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.menu__ttl{
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 500;
+}
+
+.menu__sub{
+  margin-top: 8px;
+  font-size: 16px;
+  font-family: 'Zen Old Mincho', serif;
+}
+
+.menu__list{
+  display: flex;
+  gap: 16px;
+  list-style: none;
+}
+
+.menu__item{
+  width: calc((100% - 64px) / 3);
+  display: flex;
+  flex-direction: column;
+}
+
+.menu__img{
+  width: 100%;
+  display: block;
+}
+
+.menu__name,
+.menu__text,
+.menu__price{
+  display: block;
+}
+
+.menu__name{
+  display: block;
+  margin-top: 20px;
+  font-size: 20px;
+  font-family: 'Zen Old Mincho', serif;
+  font-weight: 500;
+}
+
+.menu__text{
+  display: block;
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.menu__price{
+  display: block;
+  margin-top: 32px;
+  font-size: 18px;
+  text-align: right;
+}
+
+.menu__cta{
+  display: block;
+  width: fit-content;
+  margin: 72px auto 0;
+  padding: 16px 64px 24px;
+  border: 1px solid #444;
+  font-size: 18px;
+  letter-spacing: 0.08em;
+  text-align: center;
+  background: #fff;
+  border-radius: 2px;
+}
+
+.info{
+  padding: 64px 0 100px;
+}
+
+.info__grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.access__head,
+.business__head{
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.access__ttl{
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.business__ttl{
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.access__sub,
+.business__sub{
+  margin-top: 8px;
+  font-size: 16px;
+  font-family: 'Zen Old Mincho', serif;
+}
+
+.access__list{
+  list-style: none;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.access__list li{
+  font-size: 18px;
+  padding-bottom: 12px;
+  line-height: 2.2;
+}
+
+.access__map{
+  width: 100%;
+  max-width: 460px;
+  height: 240px;
+  margin: 0 auto;
+  overflow: hidden;
+  line-height: 2;
+}
+
+.access__address{
+  max-width: 460px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  background: #63856B;
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+}
+
+.business__box{
+  max-width: 420px;
+  margin: 0 auto;
+  background: #63856B;
+  color: #fff;
+  padding: 24px 24px 28px;
+  border-radius: 4px;
+}
+
+.business__list{
+  list-style: none;
+  text-align: center;
+}
+
+.business__list li{
+  font-size: 20px;
+  line-height: 2;
+  margin-bottom: 18px;
+}
+
+
+.business__link{
+    font-size: 20px;
+  font-weight: 500;
+  display: block;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 4px 12px;
+  background: #fff;
+  color: #63856B;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.business__list li:last-child{
+  padding-top: 12px;
+  font-size: 14px;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.ft{
+  padding: 90px 0 60px;
+}
+
+.ft__grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: start;
+}
+
+.ft__logo{
+  width: 60px;
+  height: auto;
+  display: block;
+  position: relative;
+}
+
+.ft__brand{
+  text-align: left;
+}
+
+.ft__nav{
+  text-align: center;
+}
+
+.ft__info{
+  text-align: left;
+}
+
+.ft__nav-list{
+  display: flex;
+  gap: 16px;
+  list-style: none;
+  margin-top: 60px;
+}
+
+.ft__nav-list,
+.ft__info-list{
+  list-style: none;
+}
+
+.ft__nav-list li,
+.ft__info-list li{
+  margin-bottom: 18px;
+}
+/*font-family: 'Noto Sans JP', sans-serif;*/

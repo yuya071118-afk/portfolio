@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>診療時間・アクセス/そらいろ小児科</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+ <link rel="icon" sizes="192x192" href="img/logo.png">
+
+</head>
+
+<body class="page page--info">
+
+<header class="hero hero--simple">
+  <div class="wrap">
+   <div class="hd">
+    <a class="logo" href="index.html">
+     <img class="logo__img" src="img/logo.png" alt="そらいろ小児科">
+     <span class="logo__txt">そらいろ小児科</span>
+    </a>
+
+  <nav class="pc_nav" aria-label="PCナビゲーション">
+    <ul class="pc_nav__list">
+      <li><a href="index.html#first">はじめての方へ</a></li>
+      <li><a href="page2.html#hours">診療時間</a></li>
+      <li><a href="page2.html#access">アクセス</a></li>
+      <li><a href="page3.html" class="pc_nav__link--cta">Web予約</a></li>
+    </ul>
+  </nav>
+
+  <button
+    class="nav-toggle"
+    id="navToggle"
+    type="button"
+    aria-label="メニューを開く"
+    aria-controls="drawerNav"
+    aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav class="drawer_nav" id="drawerNav" aria-label="スマホナビゲーション">
+    <ul class="drawer_nav__list">
+      <li><a href="index.html#first">はじめての方へ</a></li>
+      <li><a href="page2.html#hours">診療時間</a></li>
+      <li><a href="page2.html#access">アクセス</a></li>
+      <li><a href="page3.html" class="drawer_nav__link--cta">Web予約する</a></li>
+    </ul>
+  </nav>
+</div>
+  </div>
+</header>
+
+<main>
+
+<section id="hours" class="section section--top">
+  <div class="container">
+    <h1 class="page-title">診療日・アクセス</h1>
+
+    <!-- 外側ブルーボックス -->
+    <div class="hours-box">
+      <h2 class="page-subtitle">【診療時間】18時まで受付</h2>
+      <!-- 内側ホワイトカード -->
+      <div class="hours-card">
+        <div class="hours-legend">
+  <span class="hours-legend__item"><span class="mark mark--open">●</span> 通常診療</span>
+  <span class="hours-legend__item"><span class="mark mark--star">★</span> 土曜・祝日　9:00-13:30</span>
+  <span class="hours-legend__item"><span class="mark mark--close">×</span> 休診</span>
+</div>
+        <div class="hours-table-wrap" role="region" aria-label="診療時間表（横スクロール可）" tabindex="0">
+          <table class="hours-table">
+            <thead>
+              <tr>
+                <th class="hours-table__corner"></th>
+                <th class="hours-table__colhead">月</th>
+                <th class="hours-table__colhead">火</th>
+                <th class="hours-table__colhead">水</th>
+                <th class="hours-table__colhead">木</th>
+                <th class="hours-table__colhead">金</th>
+                <th class="hours-table__colhead">土</th>
+                <th class="hours-table__colhead">祝</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="hours-table__rowhead">09:30-13:00</th>
+                <td class="is-open">●</td>
+                <td class="is-close">×</td>
+                <td class="is-open">●</td>
+                <td class="is-close">×</td>
+                <td class="is-open">●</td>
+                <td class="is-star">★</td>
+                <td class="is-star">★</td>
+              </tr>
+              <tr>
+                <th class="hours-table__rowhead">14:30-18:00</th>
+                <td class="is-open">●</td>
+                <td class="is-close">×</td>
+                <td class="is-open">●</td>
+                <td class="is-close">×</td>
+                <td class="is-open">●</td>
+                <td class="is-close">×</td>
+                <td class="is-close">×</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="hours-note">
+          <p>18時まで受付しています。仕事帰りにもご来院いただけます。</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="access" class="section">
+  <div class="wrap">
+
+    <h2 class="section__title">アクセス</h2>
+
+    <div class="access-grid">
+
+      <!-- 左：外観 -->
+      <figure class="access-photo">
+        <div class="access-highlight">
+          <span class="access-highlight__icon" aria-hidden="true">
+            <img src="img/car2.png" alt="">
+          </span>
+          <span class="access-highlight__text">駐車場3台完備</span>
+        </div>
+
+        <img src="img/exterior.jpg" alt="そらいろ小児科 外観">
+
+        <figcaption class="access-caption">
+          <p class="access-address">
+            〒808-0035<br>
+            福岡県北九州市若松区白山1丁目18-1
+          </p>
+        </figcaption>
+      </figure>
+
+      <!-- 右：マップ -->
+<figure class="access-map">
+  <div class="access-highlight">
+    <span class="access-highlight__icon" aria-hidden="true">
+      <img src="img/walk.png" alt="">
+    </span>
+    <span class="access-highlight__text">若松駅から徒歩7分</span>
+  </div>
+
+  <div class="access-map__embed">
+    <iframe
+      src="https://www.google.com/maps?q=福岡県北九州市若松区白山1丁目18-1&output=embed"
+      width="100%"
+      height="100%"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="そらいろ小児科の地図">
+    </iframe>
+  </div>
+
+  <figcaption class="access-map__note">
+    <p>
+      電車でもお車でも来院しやすい場所です。<br>
+      ※迷った場合はお電話ください。
+    </p>
+  </figcaption>
+</figure>
+    </div>
+  </div>
+</section>
+
+<section class="section section--faq">
+  <div class="wrap">
+
+    <h2 class="section__title">よくある質問（FAQ）</h2>
+
+    <dl class="faq">
+
+      <div class="faq__item">
+        <dt class="faq__question">
+          <span class="faq__label">Q1.</span>
+          初診時の持ち物は何ですか？
+        </dt>
+        <dd class="faq__answer">
+          <span class="faq__label faq__label--answer">A</span>
+          母子手帳・保険証・印鑑をご準備ください。
+        </dd>
+      </div>
+
+      <div class="faq__item">
+        <dt class="faq__question">
+          <span class="faq__label">Q2.</span>
+          発熱がある場合はどうすればいいですか？
+        </dt>
+        <dd class="faq__answer">
+          <span class="faq__label faq__label--answer">A</span>
+          判断に迷ったら、まずはお電話ください。
+        </dd>
+      </div>
+
+    </dl>
+
+  </div>
+</section>
+    <!-- CTA -->
+<section class="section section--cta">
+  <div class="container">
+    <div class="cta">
+      <!-- 電話 -->
+      <a class="cta__box cta__box--tel" href="tel:01234985264">
+        <img class="cta__icon" src="img/telephone2.png" alt="電話">
+        <div class="cta__txt">
+          <p class="cta__ttl">電話
+          <span class="cta__telno">0123-498-5264</span></p>
+          <p class="cta__sub">今すぐ予約・相談したい方はこちら</p>
+        </div>
+      </a>
+
+      <!-- Web予約 -->
+      <a class="cta__box cta__box--web" href="page3.html">
+        <img class="cta__icon" src="img/icon-web.png" alt="予約">
+        <div class="cta__txt">
+          <p class="cta__ttl">Web予約</p>
+          <p class="cta__sub">予約フォームへ進む</p>
+        </div>
+        <span class="cta__arrow">›</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+    <section class="sec">
+      <div class="wrap">
+        <p class="note">ご予約・ご相談は電話・Web予約からも可能です。</p>
+      </div>
+    </section>
+
+</main>
+<footer class="ft">
+  <div class="wrap ft__in">
+
+    <div class="ft__left">
+      <a class="logo logo--ft" href="index.html">
+        <img class="logo__img" src="img/logo.png" alt="logo">
+        <span class="logo__txt">そらいろ小児科</span>
+      </a>
+    </div>
+
+    <div class="ft__right">
+         <p class="ft__addr">
+        〒808-0035<br>
+        福岡県北九州市若松区白山1丁目18-1
+      </p>
+      <a class="ft__tel" href="tel:01234985264">
+        <img src="img/telephone2.png" alt="電話">
+        0123-498-5264
+      </a>
+
+      <a class="ft__web" href="page3.html">
+        Web予約はこちら ➤
+      </a>
+    </div>
+
+    <p class="ft__copy">©2025 XCXCXCXCXCXCXC</p>
+  </div>
+</footer>
+
+<a href="#" class="to_top" id="toTop">↑ TOP</a>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const drawerNav = document.getElementById('drawerNav');
+  const drawerLinks = document.querySelectorAll('.drawer_nav a');
+  const mobileMq = window.matchMedia('(max-width: 820px)');
+  const toTop = document.getElementById('toTop');
+
+  function closeMenu() {
+    drawerNav.classList.remove('is-open');
+    toggle.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'メニューを開く');
+    document.body.classList.remove('is-menu-open');
+  }
+
+  function openMenu() {
+    drawerNav.classList.add('is-open');
+    toggle.classList.add('is-open');
+    toggle.setAttribute('aria-expanded', 'true');
+    toggle.setAttribute('aria-label', 'メニューを閉じる');
+    document.body.classList.add('is-menu-open');
+  }
+
+  toggle.addEventListener('click', function (e) {
+    e.stopPropagation();
+
+    if (drawerNav.classList.contains('is-open')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  drawerNav.addEventListener('click', function (e) {
+    e.stopPropagation();
+  });
+
+  document.addEventListener('click', function () {
+    if (mobileMq.matches) {
+      closeMenu();
+    }
+  });
+
+  drawerLinks.forEach(function (link) {
+    link.addEventListener('click', function () {
+      if (mobileMq.matches) {
+        closeMenu();
+      }
+    });
+  });
+
+  window.addEventListener('resize', function () {
+    if (!mobileMq.matches) {
+      closeMenu();
+    }
+  });
+
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 300) {
+      toTop.classList.add('is-show');
+    } else {
+      toTop.classList.remove('is-show');
+    }
+  });
+</script>
+
+</body>
+</html>

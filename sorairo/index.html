@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>そらいろ小児科</title>
+    <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" sizes="192x192" href="img/logo.png">
+</head>
+
+<body class="page page--top">
+
+  <!-- Hero（ヘッダー＋ヒーロー） -->
+<header class="hero">
+  <div class="wrap">
+   <div class="hd">
+    <a class="logo" href="index.html">
+     <img class="logo__img" src="img/logo.png" alt="そらいろ小児科">
+     <span class="logo__txt">そらいろ小児科</span>
+    </a>
+
+  <nav class="pc_nav" aria-label="PCナビゲーション">
+    <ul class="pc_nav__list">
+      <li><a href="index.html#first">はじめての方へ</a></li>
+      <li><a href="page2.html#hours">診療時間</a></li>
+      <li><a href="page2.html#access">アクセス</a></li>
+      <li><a href="page3.html" class="pc_nav__link--cta">Web予約</a></li>
+    </ul>
+  </nav>
+
+  <button
+    class="nav-toggle"
+    id="navToggle"
+    type="button"
+    aria-label="メニューを開く"
+    aria-controls="drawerNav"
+    aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav class="drawer_nav" id="drawerNav" aria-label="スマホナビゲーション">
+    <ul class="drawer_nav__list">
+      <li><a href="index.html#first">はじめての方へ</a></li>
+      <li><a href="page2.html#hours">診療時間</a></li>
+      <li><a href="page2.html#access">アクセス</a></li>
+      <li><a href="page3.html" class="drawer_nav__link--cta">Web予約する</a></li>
+    </ul>
+  </nav>
+</div>
+
+    <div class="hero__in">
+      <h1 class="hero__ttl">初めての受診でも<br>
+迷わず来院できる小児科へ
+</h1>
+      <p class="hero__sub">診察時間・予約・発熱咳などを<br>
+わかりやすくしてます。</p>
+    </div>
+
+    <div class="info">
+      <p class="info__status">
+        <img class="telephone" src="img/telephone1.png" alt="">
+        本日18時まで受付
+      </p>
+      <p class="info__status-sub">今日受診できます。</p>
+
+      <p class="info__tel">
+        <a class="info__tel-link" href="tel:01234985264">
+          <img class="telephone" src="img/telephone1.png" alt="">
+          0123-498-5264
+        </a>
+      </p>
+
+      <div class="info__cta">
+        <a class="info__cta-btn info__cta-btn--tel" href="tel:01234985264">
+          <img class="info__cta-icon" src="img/telephone2.png" alt="電話">
+          <span class="info__cta-text">
+            <span class="info__cta-title">今すぐ電話する</span>
+            <span class="info__cta-sub">電話で相談したい</span>
+          </span>
+        </a>
+
+        <a class="info__cta-btn info__cta-btn--web" href="page3.html">
+          <img class="info__cta-icon" src="img/icon-web.png" alt="">
+          <span class="info__cta-text">
+            <span class="info__cta-title">Web予約する</span>
+            <span class="info__cta-sub">予約はこちらから</span>
+          </span>
+          <span class="info__cta-arrow">›</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+  <main>
+
+<section class="sec news">
+  <div class="wrap">
+    <div class="news__box">
+      <h2 class="news__ttl">お知らせ</h2>
+
+      <ul class="news__list">
+        <li class="news__item">
+          <a class="news__link" href="#">
+            <span class="news__date">2025.06.01</span>
+            <span class="news__text">インフルエンザ予防接種について</span>
+            <span class="news__arrow">›</span>
+          </a>
+        </li>
+
+        <li class="news__item">
+          <a class="news__link" href="#">
+            <span class="news__date">2025.04.26</span>
+            <span class="news__text">ゴールデンウィークの診療について</span>
+          </a>
+        </li>
+      </ul>
+
+      <p class="news__more">
+        <a href="#">お知らせ一覧はこちら ›</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="sec info-summary">
+  <div class="wrap">
+    <div class="panel">
+      <h2 class="ttl">診療時間・アクセス</h2>
+
+<div class="info-summary__grid">
+<div class="info-summary__hours">
+  <img class="info-summary__hours-img" src="img/top-hours.png" alt="診療時間表">
+
+  <div class="info-summary__hours-btn">
+    <a class="info-summary__btn" href="page2.html#hours">
+      <img class="info-summary__btn-icon" src="img/clock.png" alt="時計">
+      診療時間を見る
+    </a>
+  </div>
+</div>
+
+  <div class="info-summary__access">
+    <ul class="info-summary__list">
+      <li><img src="img/pin.png" alt="ピン1">アクセス</li>
+      <li><img src="img/train.png" alt="電車">若松駅から徒歩7分</li>
+      <li><img src="img/car.png" alt="車">駐車場あり (3台)</li>
+    </ul>
+
+    <div class="info-summary__access-bottom">
+      <a class="info-summary__btn" href="page2.html#access">
+        <img class="info-summary__btn-icon" src="img/pin2.png" alt="ピン2">
+        地図を見る
+      </a>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</section>
+    <!-- はじめての方へ（3カード） -->
+<section id="first" class="sec sec--cards">
+  <div class="wrap">
+    <h2 class="ttl">はじめての方へ</h2>
+
+    <ol class="cards">
+      <li class="cards__item">
+        <a class="cards__link" href="#">
+          <img class="cards__icon" src="img/icon-flow.png" alt="">
+          <div class="cards__body">
+            <span class="cards__ttl">初診の流れ</span><br>
+            <span class="cards__sub">受診の流れを見る</span>
+          </div>
+          <span class="cards__arrow">›</span>
+        </a>
+      </li>
+
+      <li class="cards__item">
+        <a class="cards__link" href="#">
+          <img class="cards__icon" src="img/icon-bag.png" alt="">
+          <div class="cards__body">
+            <span class="cards__ttl">持ち物について</span><br>
+            <span class="cards__sub">保険証・母子手帳・印鑑)</span>
+          </div>
+          <span class="cards__arrow">›</span>
+        </a>
+      </li>
+
+      <li class="cards__item">
+        <a class="cards__link" href="#">
+          <img class="cards__icon" src="img/icon-fever.png" alt="">
+          <div class="cards__body">
+            <span class="cards__ttl">発熱時の対応</span><br>
+            <span class="cards__sub">目安はこちらから</span>
+          </div>
+          <span class="cards__arrow">›</span>
+        </a>
+      </li>
+    </ol>
+  </div>
+</section>
+
+    <!-- CTA -->
+<section class="sec sec--cta">
+  <div class="wrap">
+    <div class="cta-panel">
+      <h2 class="ttl">診療のご予約・ご相談</h2>
+      <p class="cta-lead">ご予約・ご相談はお気軽にどうぞ</p>
+
+      <div class="cta">
+        <a class="cta__box cta__box--tel" href="tel:01234985264">
+          <img class="cta__icon" src="img/telephone2.png" alt="電話">
+          <div class="cta__txt">
+            <p class="cta__ttl">
+              電話
+              <span class="cta__telno">0123-498-5264</span>
+            </p>
+            <p class="cta__sub">今すぐ相談する</p>
+          </div>
+        </a>
+
+        <a class="cta__box cta__box--web" href="page3.html">
+          <img class="cta__icon" src="img/icon-web.png" alt="予約">
+          <div class="cta__txt">
+            <p class="cta__ttl cta__ttl--web">Web予約をする</p>
+            <p class="cta__sub">予約はこちらから</p>
+          </div>
+          <span class="cta__arrow">›</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- 補足 -->
+    <section class="sec">
+      <div class="wrap">
+        <p class="note">ご予約・ご相談は電話・Web予約からも可能です。</p>
+      </div>
+    </section>
+
+  </main>
+
+<footer class="ft ft--top">
+  <div class="wrap ft__in ft__in--top">
+    <a class="logo logo--ft" href="index.html">
+      <img class="logo__img" src="img/logo.png" alt="">
+      <span class="logo__txt">そらいろ小児科</span>
+    </a>
+    <p class="ft__copy ft__copy--top">©2025 XCXCXCXCXCXCXC</p>
+  </div>
+</footer>
+
+<a href="#" class="to_top" id="toTop">↑ TOP</a>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const drawerNav = document.getElementById('drawerNav');
+  const drawerLinks = document.querySelectorAll('.drawer_nav a');
+  const mobileMq = window.matchMedia('(max-width: 820px)');
+  const toTop = document.getElementById('toTop');
+
+  function closeMenu() {
+    drawerNav.classList.remove('is-open');
+    toggle.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'メニューを開く');
+    document.body.classList.remove('is-menu-open');
+  }
+
+  function openMenu() {
+    drawerNav.classList.add('is-open');
+    toggle.classList.add('is-open');
+    toggle.setAttribute('aria-expanded', 'true');
+    toggle.setAttribute('aria-label', 'メニューを閉じる');
+    document.body.classList.add('is-menu-open');
+  }
+
+  toggle.addEventListener('click', function (e) {
+    e.stopPropagation();
+
+    if (drawerNav.classList.contains('is-open')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  drawerNav.addEventListener('click', function (e) {
+    e.stopPropagation();
+  });
+
+  document.addEventListener('click', function () {
+    if (mobileMq.matches) {
+      closeMenu();
+    }
+  });
+
+  drawerLinks.forEach(function (link) {
+    link.addEventListener('click', function () {
+      if (mobileMq.matches) {
+        closeMenu();
+      }
+    });
+  });
+
+  window.addEventListener('resize', function () {
+    if (!mobileMq.matches) {
+      closeMenu();
+    }
+  });
+
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 300) {
+      toTop.classList.add('is-show');
+    } else {
+      toTop.classList.remove('is-show');
+    }
+  });
+</script>
+
+</body>
+</html>
