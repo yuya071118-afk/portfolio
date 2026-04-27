@@ -863,6 +863,7 @@ section{
     letter-spacing: 0.01em;
     word-break: keep-all;     /* 単語途中で切らない */
     overflow-wrap: anywhere;  /* 入りきらない時だけ折り返す */
+    hanging-punctuation: none;
   }
 
   .hero_ttl_line{
