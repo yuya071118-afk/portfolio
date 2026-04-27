@@ -158,7 +158,7 @@ section{
 
 .hero_ttl{
   font-family: 'Noto Serif JP', serif;
-  font-size: 85.5px;
+  font-size: 72px; /* 85.5px → 72px */
   font-weight: 500;
   line-height: 1.32;
   letter-spacing: 0.02em;
@@ -188,7 +188,7 @@ section{
 }
 
 .hero_cta{
-  margin-top: 72px;
+  margin-top: 48px;
   opacity: 0;
   transform: translateY(24px);
   animation: fadeUp 1.2s ease .6s forwards;
@@ -285,13 +285,17 @@ section{
     padding-top: 48px;
   }
 
-.pc_nav{
-  display: block;
-  position: fixed;
-  top: 32px;
-  right: 56px;
-  z-index: 1000;
-}
+  .pc_nav{
+    display: block;
+    position: fixed;
+    top: 32px;
+    right: 56px;
+    z-index: 1000;
+    background: rgba(255,255,255,0.75); 
+    backdrop-filter: blur(8px);         
+    padding: 8px 20px;                  
+    border-radius: 8px;                 
+  }
 .hamburger{
    display: none;
 }
@@ -517,13 +521,13 @@ section{
 }
 
 .study_item{
-  width: 25%;
+  width: 30%;
   margin: 0;
   text-align: center;
 }
 
 .study_item--center{
-  width: 50%;
+  width: 40%;
 }
 
 .study_item img{
@@ -596,7 +600,7 @@ section{
 }
 
 .about_text{
-  margin-top: 32px;
+  margin-top: 20px;
   font-size: 24px;
   line-height: 2.2;
   color: #444;
@@ -622,7 +626,7 @@ section{
   display: inline-block;
   background: #111;
   color: #fff;
-  padding: 12px 68px;
+  padding: 12px 48px;
   font-size: 22px;
   letter-spacing: 0.04em;
   border: 1px solid #111;
@@ -662,7 +666,7 @@ section{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 6px;
   padding: 0 6px;
 }
 
@@ -810,7 +814,7 @@ section{
     width: 170px;
     min-width: 0;
     padding: 26px 20px 32px;
-    background: rgba(255,255,255,0.96);
+    background: rgba(255,255,255,0.98);
     box-shadow: 0 8px 20px rgba(0,0,0,.08);
   }
 
@@ -849,7 +853,6 @@ section{
     padding-top: 78px;
   }
 
-
   .hero_ttl{
     font-size: clamp(26px, 7.5vw, 36px); /* 少し小さく */
     line-height: 1.4;
@@ -860,7 +863,7 @@ section{
   }
 
   .hero_ttl_line{
-    display: inline;
+    display: block;
   }
 
   .hero_sub{
@@ -874,13 +877,16 @@ section{
   }
 
   .cta_btn{
+    display: block;
+    width: 100%;
+    text-align: center;
     font-size: 18px;
-    padding: 14px 40px;
+    padding: 14px 20px;
   }
 
   .hero_role{
     position: static;
-    margin-top: 20px;
+    margin-top: 32px;
     font-size: 12px;
     line-height: 1.5;
     letter-spacing: 0.08em;
@@ -958,7 +964,7 @@ section{
 
   .project_summary p{
     font-size: 15px;
-    line-height: 1.75;
+    line-height: 1.6;
     font-weight: 400;
   }
 
@@ -967,7 +973,7 @@ section{
   }
 
 .project--01 .project_ttl{
-  font-size: 56px;
+  font-size: 40px;
   line-height: 1.1;
 }
 
@@ -1167,10 +1173,6 @@ section{
   width: 92vw;
 }
 
-.sp_br{
-  display: block;
-}
-
 /*contact*/
 
   .contact{
@@ -1213,4 +1215,8 @@ section{
     font-size: 18px;
     padding: 12px 48px;
   }
+
+.sp_br{
+  display: block;
+}
 }
