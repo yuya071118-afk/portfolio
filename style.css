@@ -280,24 +280,25 @@ section{
 /* PC */
 @media (min-width: 769px){
 
-  .hero_head{
-    justify-content: flex-end;
-    padding-top: 48px;
-  }
+.hero_head{
+  justify-content: flex-end;
+  padding-top: 48px;
+}
 
-  .pc_nav{
-    display: block;
-    position: fixed;
-    top: 32px;
-    right: 56px;
-    z-index: 1000;
-    background: rgba(255,255,255,0.75); 
-    backdrop-filter: blur(8px);         
-    padding: 8px 20px;                  
-    border-radius: 8px;                 
-  }
+.pc_nav{
+  display: block;
+  position: fixed;
+  top: 32px;
+  right: 56px;
+  z-index: 1000;
+  background: rgba(255,255,255,0.75); 
+  backdrop-filter: blur(8px);         
+  padding: 8px 20px;                  
+  border-radius: 8px;                 
+}
+
 .hamburger{
-   display: none;
+  display: none;
 }
 
 .hero_text{
@@ -397,6 +398,10 @@ section{
 .project_incharge2{
   margin-top: 16px;
   font-size: 13px;
+}
+
+.project--02{
+  border-top: 1px solid rgba(17,17,17,0.1);    
 }
 
 .project--02 .project_compare{
@@ -610,7 +615,7 @@ section{
 
 .about_mail{
   margin-top: 32px;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 .mail_img{
@@ -641,7 +646,6 @@ section{
   transform: translateY(-2px);
 }
 
-
 /*Petsonal Art*/
 
 .art{
@@ -661,7 +665,7 @@ section{
 .art_visual{
   width: 75%;
   margin: 0 auto;
-   overflow: hidden;
+  overflow: hidden;
 }
 
 .fin_ske{
@@ -730,21 +734,35 @@ section{
 /* AI Creative Direction */
 .art_ai{
   margin-top: 80px;
+  padding-top: 64px;
+  border-top: none;
   text-align: center;
+}
+
+.art_ai::before{
+  content: "";
+  display: block;
+  width: 100vw;
+  height: 1px;
+  background: rgba(17,17,17,0.1);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 64px;
 }
 
 .art_ai_label{
   font-family: 'Noto Serif JP', serif;
   font-size: 22px;
   font-weight: 400;
-  letter-spacing: 0.14em;
-  color: #444;
+  letter-spacing: 0.08em;
+  color: #111;
 }
 
 .art_ai_sub{
   margin-top: 12px;
-  font-size: 15px;
-  color: #888;
+  font-size: 16px;
+  color: #444;
   letter-spacing: 0.05em;
 }
 
@@ -757,7 +775,7 @@ section{
 
 .art_ai_grid img{
   width: calc((100% - 24px) / 2);
-  max-width: 360px;
+  max-width: 300px;
   display: block;
   object-fit: cover;
 }
@@ -805,16 +823,16 @@ section{
 }
 
 .contact .about_text{
-  margin-top: 24px;
+  margin-top: 20px;
   font-size: 22px;
 }
 
 .contact .about_mail{
-  margin-top: 28px;
+  margin-top: 32px;
 }
 
 .contact .about_cta{
-  margin-top: 28px;
+  margin-top: 32px;
 }
 
 /*top_nav*/
@@ -837,11 +855,11 @@ section{
   visibility: hidden;
   transform: translateY(8px);
   transition:
-    opacity .35s ease,
-    visibility .35s ease,
-    transform .35s ease,
-    background-color .35s ease,
-    box-shadow .35s ease;
+   opacity .35s ease,
+   visibility .35s ease,
+   transform .35s ease,
+   background-color .35s ease,
+   box-shadow .35s ease;
   z-index: 900;
 }
 
@@ -864,186 +882,185 @@ section{
 /* スマホ */
 @media (max-width: 768px){
 
-  .hero{
-    min-height: auto;     /* ← 追加。100vhを解除 */
-  }
+.hero{
+  min-height: auto;     /* ← 追加。100vhを解除 */
+}
 
-  .hamburger{
-    top: 20px;
-    right: 20px;
-    width: 38px;
-    height: 38px;
-  }
+.hamburger{
+  top: 20px;
+  right: 20px;
+  width: 38px;
+  height: 38px;
+}
 
-  .hamburger span{
-    width: 24px;
-  }
+.hamburger span{
+  width: 24px;
+}
 
-  .drawer_nav{
-    position: fixed;
-    top: 58px;
-    right: 12px;
-    left: auto;
-    width: 170px;
-    min-width: 0;
-    padding: 26px 20px 32px;
-    background: rgba(255,255,255,0.98);
-    box-shadow: 0 8px 20px rgba(0,0,0,.08);
-  }
+.drawer_nav{
+  position: fixed;
+  top: 58px;
+  right: 12px;
+  left: auto;
+  width: 170px;
+  min-width: 0;
+  padding: 26px 20px 32px;
+  background: rgba(255,255,255,0.98);
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
+}
 
-  .drawer_nav_list{
-    min-width: 0;
-    width: auto;
-  }
+.drawer_nav_list{
+  min-width: 0;
+  width: auto;
+}
 
-  .drawer_nav_list li + li{
-    margin-top: 20px;
-  }
+.drawer_nav_list li + li{
+  margin-top: 20px;
+}
 
-  .drawer_nav_list a{
-    font-size: 15px;
-  }
+.drawer_nav_list a{
+  font-size: 15px;
+}
 
-  .drawer_nav_meta{
-    margin-bottom: 12px;
-    font-size: 10px;
-    letter-spacing: 0.16em;
-  }
+.drawer_nav_meta{
+  margin-bottom: 12px;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+}
 
-  .to_top{
-    right: 20px;
-    bottom: 20px;
-    padding: 12px 12px;
-    font-size: 12px;
-  }
+.to_top{
+  right: 20px;
+  bottom: 20px;
+  padding: 12px 12px;
+  font-size: 12px;
+}
 
-  .hero .wrap{
-    min-height: auto;
-    padding-bottom: 20px;
-  }
+.hero .wrap{
+  min-height: auto;
+  padding-bottom: 20px;
+}
 
-  .hero_text{
-    padding-top: 78px;
-  }
+.hero_text{
+  padding-top: 78px;
+}
 
-  .hero_ttl{
-    font-size: clamp(22px, 6.5vw, 36px); /* 少し小さく */
-    line-height: 1.4;
-    letter-spacing: 0.01em;
-    word-break: normal;
-    overflow-wrap: break-word;
-    font-feature-settings: "palt" 0;
-  }
+.hero_ttl{
+  font-size: clamp(22px, 6.5vw, 36px); /* 少し小さく */
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  word-break: normal;
+  overflow-wrap: break-word;
+  font-feature-settings: "palt" 0;
+}
 
-  .hero_ttl_line{
-    display: block;
-  }
+.hero_ttl_line{
+  display: block;
+}
 
-  .hero_sub{
-    margin-top: 32px;
-    font-size: 14px;
-    line-height: 1.8;
-  }
+.hero_sub{
+  margin-top: 32px;
+  font-size: 14px;
+  line-height: 1.8;
+}
 
-  .hero_cta{
-    margin-top: 32px;
-  }
+.hero_cta{
+  margin-top: 32px;
+}
 
-  .cta_btn{
-    display: block;
-    width: 100%;
-    text-align: center;
-    font-size: 18px;
-    padding: 14px 20px;
-  }
+.cta_btn{
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  padding: 14px 20px;
+}
 
-  .hero_role{
-    position: static;
-    margin-top: 32px;
-    font-size: 12px;
-    line-height: 1.5;
-    letter-spacing: 0.08em;
-    text-align: left;
-    color: #444;
-   }
+.hero_role{
+  position: static;
+  margin-top: 32px;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.08em;
+  text-align: left;
+  color: #444;
+}
 
 /*project*/
 
-  .project{
-    padding: 60px 0 88px;
-  }
+.project{
+  padding: 60px 0 88px;
+}
 
-  .project_head{
-    margin-bottom: 36px;
-    text-align: center;
-  }
+.project_head{
+  margin-bottom: 36px;
+  text-align: center;
+}
 
-  .project_ttl{
-    font-size: 40px;
-    line-height: 1.15;
-  }
+.project_ttl{
+  font-size: 40px;
+  line-height: 1.15;
+}
 
-  .project_sub1,
-  .project_sub2{
-    margin-top: 16px;
-    font-size: 18px;
-    line-height: 1.8;
-  }
+.project_sub1,
+.project_sub2{
+  margin-top: 16px;
+  font-size: 18px;
+  line-height: 1.8;
+}
 
-  .project_incharge1,
-  .project_incharge2{
-    margin-top: 8px;
-    font-size: 13px;
-    line-height: 1.8;
-  }
+.project_incharge1,
+.project_incharge2{
+  margin-top: 8px;
+  font-size: 13px;
+  line-height: 1.8;
+}
 
-  .project_compare{
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    align-items: center;
-  }
+.project_compare{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
 
-  .project_card{
-    width: 100%;
-    margin: 0;
-  }
+.project_card{
+  width: 100%;
+  margin: 0;
+}
 
-  .project_label{
-    margin-bottom: 12px;
-    text-align: center;
-    font-size: 14px;
-    letter-spacing: 0.12em;
-  }
+.project_label{
+  margin-bottom: 12px;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+}
 
-  .project_thumb{
-    height: auto !important;
-    overflow: visible;
-    text-align: center;
-  }
+.project_thumb{
+  height: auto !important;
+  overflow: visible;
+  text-align: center;
+}
 
-  .project_img{
-    width: 88%;
-    max-width: 320px;
-    height: auto !important;
-    display: block;
-    margin: 0 auto;
-    object-fit: contain;
-  }
+.project_img{
+  width: 88%;
+  max-width: 320px;
+  height: auto !important;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
 
-  .project_summary{
-    text-align: left;
-  }
+.project_summary{
+  text-align: left;
+}
 
-  .project_summary p{
-    font-size: 15px;
-    line-height: 1.6;
-    font-weight: 400;
-  }
+.project_summary p{
+  font-size: 15px;
+  line-height: 1.6;
+}
 
-  .project_summary p + p{
-    margin-top: 12px;
-  }
+.project_summary p + p{
+  margin-top: 12px;
+}
 
 .project--01 .project_ttl{
   font-size: 40px;
@@ -1067,12 +1084,10 @@ section{
   font-size: 16px;
 }
 
-
 .project--02 .project_img{
   width: 100%;
   max-width: 500px;
 }
-
 
 .project--02 .project_ttl{
   font-size: 42px;
@@ -1166,11 +1181,10 @@ section{
   line-height: 1.9;
 }
 
-  .about_box{
-    text-align: left; /* center → left */
-    padding: 0 4px;
-  }
-
+.about_box{
+  text-align: left; 
+  padding: 0 4px;
+}
 
 .about{
   padding: 60px 0 88px;
@@ -1190,20 +1204,8 @@ section{
 }
 
 .about_text{
-  margin-top: 20px;
-  font-size: 16px;
-  line-height: 2;
-}
-
-.about_cta{
-  margin-top: 24px;
-}
-
-.about_btn{
-  font-size: 18px;
-  padding: 12px 48px;
-  max-width: 340px;
-  margin: 0 auto;
+  font-size: 14px;
+  line-height: 1.9;
 }
 
 .about_text:first-of-type{
@@ -1213,6 +1215,16 @@ section{
 
 .about_tools span{
   display: block;
+}
+
+.about_cta{
+  margin-top: 24px;
+}
+
+.about_btn{
+  padding: 12px 48px;
+  max-width: 340px;
+  margin: 0 auto;
 }
 
 /*art*/
@@ -1254,73 +1266,81 @@ section{
   width: 92vw;
 }
 
-  .art_ai{
-    margin-top: 56px;
-  }
+.art_ai{
+  margin-top: 56px;
+}
 
-  .art_ai_grid{
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
+.art_ai_label{
+  font-size: 18px; 
+}
 
-  .art_ai_grid img{
-    width: 60%;
-    max-width: 100%;
-    max-height: 480px;
-    object-fit: cover;
-    object-position: top;
-  }
+  .art_ai_sub{
+  font-size: 14px; 
+}
 
-  .ai_modal_img{
-    width: 70vw;
-    max-height: 90vh;
-  }
+.art_ai_grid{
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.art_ai_grid img{
+  width: 60%;
+  max-width: 100%;
+  max-height: 480px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.ai_modal_img{
+  width: 70vw;
+  max-height: 90vh;
+ }
 
 /*contact*/
 
-  .contact{
-    padding: 88px 0 120px;
-  }
+.contact{
+  padding: 88px 0 120px;
+}
 
-  .contact .about_box{
-    max-width: 320px;
-    margin: 0 auto;
-    text-align: center;
-  }
+.contact .about_box{
+  max-width: 320px;
+  margin: 0 auto;
+  text-align: center;
+}
 
-  .contact .about_ttl{
-    font-size: 48px;
-    line-height: 1.15;
-  }
+.contact .about_ttl{
+  font-size: 48px;
+  line-height: 1.15;
+}
 
-  .contact .about_text{
-    margin-top: 24px;
-    font-size: 18px;
-    line-height: 1.9;
-  }
+.contact .about_text{
+  margin-top: 24px;
+  font-size: 18px;
+  line-height: 1.9;
+}
 
-  .contact .about_mail{
-    margin-top: 24px;
-    font-size: 16px;
-    line-height: 1.8;
-  }
+.contact .about_mail{
+  margin-top: 24px;
+  font-size: 16px;
+  line-height: 1.8;
+}
 
-  .contact .mail_img{
-    width: 24px;
-    top: 7px;
-  }
+.contact .mail_img{
+  width: 24px;
+  top: 7px;
+}
 
-  .contact .about_cta{
-    margin-top: 24px;
-  }
+.contact .about_cta{
+  margin-top: 24px;
+}
 
-  .contact .about_btn{
-    font-size: 18px;
-    padding: 12px 48px;
-  }
+.contact .about_btn{
+  font-size: 18px;
+  padding: 12px 48px;
+}
 
 .sp_br{
   display: block;
-}
+ }
 }
