@@ -779,9 +779,6 @@ section{
   transform: translateY(-2px);
   box-shadow: 0 8px 18px rgba(0,0,0,.06);
 }
-.pc_br{
-  display: inline;
-}
 
 .sp_br{
   display: none;
@@ -852,16 +849,14 @@ section{
     padding-top: 78px;
   }
 
-  .pc_br{
-    display: none;
-  }
 
   .hero_ttl{
-    font-size: clamp(28px, 8.5vw, 40px); /* 画面幅に応じて自動縮小 */
-    line-height: 1.3;
+    font-size: clamp(26px, 7.5vw, 36px); /* 少し小さく */
+    line-height: 1.4;
     letter-spacing: 0.01em;
-    word-break: keep-all;
+    word-break: normal;
     overflow-wrap: break-word;
+    font-feature-settings: "palt" 0;
   }
 
   .hero_ttl_line{
