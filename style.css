@@ -727,6 +727,77 @@ section{
   box-shadow: 0 18px 40px rgba(0,0,0,.22);
 }
 
+/* AI Creative Direction */
+.art_ai{
+  margin-top: 80px;
+  text-align: center;
+}
+
+.art_ai_label{
+  font-family: 'Noto Serif JP', serif;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  color: #444;
+}
+
+.art_ai_sub{
+  margin-top: 12px;
+  font-size: 15px;
+  color: #888;
+  letter-spacing: 0.05em;
+}
+
+.art_ai_grid{
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.art_ai_grid img{
+  width: calc((100% - 24px) / 2);
+  max-width: 360px;
+  display: block;
+  object-fit: cover;
+}
+
+.ai_zoom{
+  cursor: pointer;
+  transition: transform .5s ease, filter .5s ease;
+}
+
+.ai_zoom:hover{
+  transform: scale(1.01);
+  filter: brightness(1.02);
+}
+
+.ai_modal{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .35s ease, visibility .35s ease;
+  z-index: 2000;
+}
+
+.ai_modal.is-open{
+  opacity: 1;
+  visibility: visible;
+}
+
+.ai_modal_img{
+  width: 22vw;
+  max-height: 100vh;
+  height: auto;
+  display: block;
+  box-shadow: 0 18px 40px rgba(0,0,0,.22);
+}
+
 /*contact*/
 
 .contact{
@@ -1095,6 +1166,12 @@ section{
   line-height: 1.9;
 }
 
+  .about_box{
+    text-align: left; /* center → left */
+    padding: 0 4px;
+  }
+
+
 .about{
   padding: 60px 0 88px;
 }
@@ -1102,12 +1179,14 @@ section{
 .about_ttl{
   font-size: 48px;
   line-height: 1.15;
+  text-align: center;
 }
 
 .about_name{
   margin-top: 20px;
   font-size: 36px;
   line-height: 1.4;
+  text-align: center;
 }
 
 .about_text{
@@ -1174,6 +1253,29 @@ section{
 .art_modal_img{
   width: 92vw;
 }
+
+  .art_ai{
+    margin-top: 56px;
+  }
+
+  .art_ai_grid{
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .art_ai_grid img{
+    width: 60%;
+    max-width: 100%;
+    max-height: 480px;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .ai_modal_img{
+    width: 70vw;
+    max-height: 90vh;
+  }
 
 /*contact*/
 
