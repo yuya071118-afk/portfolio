@@ -105,16 +105,16 @@
           </ul>
 
           <div class="access__map">
-            <iframe
-              src="https://www.google.com/maps?q=福岡県北九州市若松区白山1丁目18-1&output=embed"
-              width="100%"
-              height="100%"
-              style="border:0;"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              title="Lira地図">
-            </iframe>
+<iframe
+  src="https://www.google.com/maps?q=35.6464,139.6536&output=embed"
+  width="100%"
+  height="100%"
+  style="border:0;"
+  allowfullscreen=""
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade"
+  title="Lira地図">
+</iframe>
           </div>
 
           <p class="access__address">〒154-0017 東京都世田谷区世田谷2丁目</p>
@@ -168,7 +168,83 @@
       </div>
 
     </div>
+    <p class="ft__copy">© 2026 Lira. All rights reserved.</p>
   </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const navItems = document.querySelectorAll(".nav_item");
+  const heroHead = document.querySelector(".hero_head");
+  const atmSection = document.querySelector(".atm");
+  const atmTitle = document.querySelector(".atm__ttl");
+
+  navItems.forEach((item) => {
+    item.addEventListener("mouseenter", () => {
+      item.classList.add("is-hover");
+    });
+
+    item.addEventListener("mouseleave", () => {
+      item.classList.remove("is-hover");
+    });
+
+    item.addEventListener("focus", () => {
+      item.classList.add("is-hover");
+    });
+
+    item.addEventListener("blur", () => {
+      item.classList.remove("is-hover");
+    });
+  });
+
+  function clamp(value, min, max) {
+    return Math.min(Math.max(value, min), max);
+  }
+
+  function updateUI() {
+    if (heroHead) {
+      heroHead.classList.toggle("is-scrolled", window.scrollY > 30);
+    }
+
+    if (atmSection && heroHead) {
+      const rect = atmSection.getBoundingClientRect();
+      const isAtm = rect.top <= 100 && rect.bottom > 100;
+      heroHead.classList.toggle("is-atm", isAtm);
+    }
+
+    if (atmSection && atmTitle) {
+      const rect = atmSection.getBoundingClientRect();
+      const windowH = window.innerHeight;
+
+      const start = windowH * 0.9;
+      const end = windowH * 0.2;
+
+      const progress = clamp((start - rect.top) / (start - end), 0, 1);
+
+      const y = 40 - progress * 40;
+      const opacity = progress;
+
+      atmTitle.style.setProperty("--atm-y", `${y}px`);
+      atmTitle.style.setProperty("--atm-opacity", opacity);
+    }
+  }
+
+  let ticking = false;
+
+  function onScroll() {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        updateUI();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+
+  updateUI();
+  window.addEventListener("scroll", onScroll);
+  window.addEventListener("resize", updateUI);
+});
+</script>
 
 </body>
 </html>
