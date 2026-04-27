@@ -857,7 +857,7 @@ section{
   }
 
   .hero_ttl{
-    font-size: clamp(28px, 8.5vw, 39px); /* 画面幅に応じて自動縮小 */
+    font-size: clamp(28px, 8.5vw, 40px); /* 画面幅に応じて自動縮小 */
     line-height: 1.3;
     letter-spacing: 0.01em;
     word-break: keep-all;
