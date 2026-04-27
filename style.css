@@ -456,10 +456,6 @@ section{
   filter: brightness(1.04);
 }
 
-.project_line .br_pc{
-  display: inline;
-}
-
 .before_zoom{
   cursor: pointer;
 }
@@ -861,7 +857,7 @@ section{
   }
 
   .hero_ttl{
-    font-size: clamp(28px, 8.5vw, 40px); /* 画面幅に応じて自動縮小 */
+    font-size: clamp(28px, 8.5vw, 39px); /* 画面幅に応じて自動縮小 */
     line-height: 1.3;
     letter-spacing: 0.01em;
     word-break: keep-all;
@@ -1021,9 +1017,6 @@ section{
   font-size: 14px;
 }
 
-.project_line .br_pc{
-  display: none;
-}
 /*study*/
 .study{
   padding: 60px 0 88px;
