@@ -582,6 +582,8 @@ section{
 }
 
 .about_box{
+  max-width: 1000px;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -601,7 +603,7 @@ section{
 
 .about_text{
   margin-top: 20px;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 2.2;
   color: #444;
 }
@@ -854,7 +856,7 @@ section{
   }
 
   .hero_ttl{
-    font-size: clamp(26px, 7.5vw, 36px); /* 少し小さく */
+    font-size: clamp(22px, 6.5vw, 36px); /* 少し小さく */
     line-height: 1.4;
     letter-spacing: 0.01em;
     word-break: normal;
