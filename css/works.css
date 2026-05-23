@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ベースの背景色と設定 */
+body {
+  background-color: #f0ede8; /* 元サイトのベースカラー */
+  overflow-x: hidden;
+}
+
+/* 波キャンバスを画面全体に固定配置 */
+#waveCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+  pointer-events: none; /* 前面に配置してもクリック等の操作を邪魔しない */
+}
+
+/* スクロール確認用のダミー高さ */
+.dummy-scroll-area {
+  height: 300vh; 
+}
