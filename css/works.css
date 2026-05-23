@@ -6,10 +6,21 @@
   padding: 0;
 }
 
-/* ベースの背景色と設定 */
-body {
-  background-color: #f0ede8; /* 元サイトのベースカラー */
+:root {
+  --bg:    #080808;
+  --white: #ece8e0;
+  --red:   #8b1a1a;
+  --dim:   #555555;
+}
+
+html, body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 100;
   overflow-x: hidden;
+  cursor: none;
+  min-height: 100vh;
 }
 
 /* 波キャンバスを画面全体に固定配置 */
@@ -19,11 +30,245 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 5;
-  pointer-events: none; /* 前面に配置してもクリック等の操作を邪魔しない */
+  z-index: 90;
+  pointer-events: none;
 }
 
-/* スクロール確認用のダミー高さ */
-.dummy-scroll-area {
-  height: 300vh; 
+/* ==========================================
+   HEADER & HAMBURGER MENU (style.cssから完全移植)
+   ========================================== */
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 500;
+  padding: 1.6rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  letter-spacing: 0.3em;
+  font-weight: 300;
+}
+
+/* ━━ HAMBURGER ━━ */
+.menu-btn{position:fixed;top:28px;right:32px;z-index:500;background:none;border:none;
+  display:flex;flex-direction:column;align-items:flex-end;gap:6px;padding:8px;cursor:pointer;}
+.mbl{display:block;height:1px;background:#e8e4df;transition:all 0.4s cubic-bezier(0.16,1,0.3,1);}
+.mbl:nth-child(1){width:28px;}
+.mbl:nth-child(2){width:20px;}
+.menu-btn.dark .mbl{background:#1a1816;}
+.menu-btn.open .mbl:nth-child(1){width:28px;transform:rotate(-45deg) translateY(4px);background:#1a1816!important;}
+.menu-btn.open .mbl:nth-child(2){width:28px;transform:rotate(45deg) translateY(-4px);background:#1a1816!important;}
+
+/* ━━ MENU OVERLAY ━━ */
+.menu-overlay{position:fixed;inset:0;z-index:400;background:#f0ede8;
+  display:flex;flex-direction:column;justify-content:center;padding:80px 52px;
+  opacity:0;pointer-events:none;transition:opacity 0.5s cubic-bezier(0.16,1,0.3,1);}
+.menu-overlay.open{opacity:1;pointer-events:all;}
+.menu-nav{display:flex;flex-direction:column;}
+.mni{display:flex;align-items:center;padding:20px 0;border-bottom:1px solid rgba(26,24,22,0.07);
+  text-decoration:none;overflow:hidden;cursor:pointer;}
+.mni:first-child{border-top:1px solid rgba(26,24,22,0.07);}
+.mni-num{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:0.12em;
+  color:rgba(26,24,22,0.25);width:40px;flex-shrink:0;}
+.mni-label{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,6vw,64px);font-weight:200;
+  letter-spacing:0.06em;color:#1a1816;transform:translateY(100%);
+  transition:transform 0.6s cubic-bezier(0.16,1,0.3,1);line-height:1;}
+.menu-overlay.open .mni:nth-child(1) .mni-label{transform:translateY(0);transition-delay:0.05s;}
+.menu-overlay.open .mni:nth-child(2) .mni-label{transform:translateY(0);transition-delay:0.12s;}
+.menu-overlay.open .mni:nth-child(3) .mni-label{transform:translateY(0);transition-delay:0.19s;}
+.menu-overlay.open .mni:nth-child(4) .mni-label{transform:translateY(0);transition-delay:0.26s;}
+.mni-arrow{margin-left:auto;font-size:18px;color:rgba(26,24,22,0.2);}
+.menu-footer{margin-top:48px;display:flex;gap:24px;}
+.mfl{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;
+  color:rgba(26,24,22,0.25);text-decoration:none;}
+/* ==========================================
+   PORTFOLIO - Gallery & Cards
+   ========================================== */
+.gallery {
+  padding: 8rem 2.5rem 5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: #111;
+}
+
+.card {
+  aspect-ratio: 3 / 4;
+  position: relative;
+  overflow: hidden;
+  cursor: none;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s, transform 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+.card.vis { opacity: 1; transform: translateY(0); }
+
+.card-bg {
+  width: 100%; height: 100%;
+  position: absolute; inset: 0;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%) brightness(0.55);
+  transform: scale(1);
+  transition: filter 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1);
+}
+.card:hover .card-bg { filter: grayscale(0%) brightness(0.82); transform: scale(1.06); }
+
+.card-over {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(8,8,8,0.95) 0%, transparent 55%);
+  display: flex; flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.6rem;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.card:hover .card-over { opacity: 1; }
+
+.card-tag {
+  font-size: 0.5rem; letter-spacing: 0.3em;
+  color: var(--red); margin-bottom: 0.3rem;
+  transform: translateY(8px);
+  transition: transform 0.45s cubic-bezier(0.16,1,0.3,1);
+}
+.card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem; font-weight: 300; line-height: 1.3;
+  transform: translateY(10px);
+  transition: transform 0.45s cubic-bezier(0.16,1,0.3,1) 0.04s;
+}
+.card:hover .card-tag,
+.card:hover .card-title { transform: translateY(0); }
+
+.card-num {
+  position: absolute; top: 0.8rem; left: 0.8rem;
+  font-size: 0.5rem; letter-spacing: 0.15em;
+  color: rgba(236,232,224,0.2);
+}
+
+/* カーテン */
+.curtain {
+  position: fixed; inset: 0;
+  z-index: 300;
+  background: var(--bg);
+  pointer-events: none;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+.curtain.closing {
+  pointer-events: all;
+  transform: scaleY(1);
+  transition: transform 0.5s cubic-bezier(0.76,0,0.24,1);
+}
+.curtain.opening {
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.55s cubic-bezier(0.76,0,0.24,1);
+}
+
+/* 詳細ページ */
+.detail {
+  position: fixed; inset: 0;
+  z-index: 200;
+  background: var(--bg);
+  display: none;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.d-img {
+  width: 100%; height: 62vh;
+  overflow: hidden; flex-shrink: 0;
+}
+.d-img-inner {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.1);
+  transition: transform 1.1s cubic-bezier(0.16,1,0.3,1);
+}
+.d-img-inner.in { transform: scale(1); }
+
+.d-body { padding: 3rem 4rem 5rem; max-width: 760px; }
+
+.d-eyebrow {
+  font-size: 0.52rem; letter-spacing: 0.45em;
+  color: var(--red); margin-bottom: 1.2rem;
+  opacity: 0; transform: translateY(14px);
+  transition: opacity 0.6s 0.4s, transform 0.6s 0.4s;
+}
+.d-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 300; line-height: 1.15; margin-bottom: 1.5rem;
+  opacity: 0; transform: translateY(18px);
+  transition: opacity 0.6s 0.55s, transform 0.6s 0.55s;
+}
+.d-rule {
+  width: 28px; height: 1px;
+  background: var(--red); margin-bottom: 1.5rem;
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.6s cubic-bezier(0.16,1,0.3,1) 0.7s;
+}
+.d-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic; font-size: 1rem; line-height: 2;
+  color: var(--dim);
+  opacity: 0; transform: translateY(12px);
+  transition: opacity 0.6s 0.85s, transform 0.6s 0.85s;
+}
+.d-tags {
+  margin-top: 2rem;
+  display: flex; gap: 0.5rem; flex-wrap: wrap;
+  opacity: 0;
+  transition: opacity 0.6s 1s;
+}
+.d-tag {
+  font-size: 0.5rem; letter-spacing: 0.22em;
+  border: 1px solid #1e1e1e;
+  padding: 0.28rem 0.6rem; color: var(--dim);
+}
+
+.detail.show .d-eyebrow,
+.detail.show .d-title,
+.detail.show .d-desc,
+.detail.show .d-tags  { opacity: 1; transform: translateY(0); }
+.detail.show .d-rule  { transform: scaleX(1); }
+
+/* 戻るボタン */
+.back {
+  position: fixed; top: 1.6rem; left: 3rem;
+  z-index: 400;
+  font-size: 0.55rem; letter-spacing: 0.28em;
+  background: none; border: none;
+  color: var(--white); cursor: none;
+  display: flex; align-items: center; gap: 0.6rem;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.4s;
+}
+.back::before {
+  content: ''; width: 18px; height: 1px;
+  background: currentColor; display: block;
+  transition: width 0.3s;
+}
+.back:hover::before { width: 32px; }
+.back.show { opacity: 1; pointer-events: all; }
+
+
+/* ━━ PC CURSOR (style.cssより移植) ━━ */
+@media(pointer:fine){
+  body{cursor:none;}
+  .cursor,.cursor-ring{position:fixed;border-radius:50%;pointer-events:none;
+    z-index:9999; transform:translate(-50%,-50%); transition:transform 0.1s ease-out;}
+  .cursor{width:7px;height:7px; background: #ece8e0; /* 必要に応じて色調整 */}
+  .cursor-ring{width:34px;height:34px;border:1px solid #555555;}
+}
+@media(pointer:coarse){
+  .cursor,.cursor-ring{display:none!important;}
 }
