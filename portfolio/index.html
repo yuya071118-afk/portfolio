@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suga Yuya — Portfolio</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<canvas id="waveCanvas" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:5;pointer-events:none;"></canvas>
+
+<div style="display:none">
+  <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <g id="waveGroup" fill="none" stroke="white" opacity="0.15">
+      <path class="wp" d="M200 -50 Q160 225 195 450 Q230 675 180 950"/>
+      <path class="wp" d="M220 -50 Q175 225 210 450 Q245 675 195 950"/>
+      <path class="wp" d="M240 -50 Q190 225 225 450 Q260 675 210 950"/>
+      <path class="wp" d="M260 -50 Q205 225 240 450 Q275 675 225 950"/>
+      <path class="wp" d="M280 -50 Q220 225 255 450 Q290 675 240 950"/>
+      <path class="wp" d="M300 -50 Q235 225 270 450 Q305 675 255 950"/>
+      <path class="wp" d="M320 -50 Q250 225 285 450 Q320 675 270 950"/>
+      <path class="wp" d="M340 -50 Q265 225 300 450 Q335 675 285 950"/>
+      <path class="wp" d="M360 -50 Q280 225 315 450 Q350 675 300 950"/>
+      <path class="wp" d="M380 -50 Q295 225 330 450 Q365 675 315 950"/>
+      <path class="wp" d="M400 -50 Q310 225 345 450 Q380 675 330 950"/>
+      <path class="wp" d="M420 -50 Q325 225 360 450 Q395 675 345 950"/>
+      <path class="wp" d="M440 -50 Q340 225 375 450 Q410 675 360 950"/>
+      <path class="wp" d="M460 -50 Q355 225 390 450 Q425 675 375 950"/>
+    </g>
+  </svg>
+</div>
+
+<button class="menu-btn" id="menuBtn">
+  <span class="mbl"></span><span class="mbl"></span>
+</button>
+
+<div class="menu-overlay" id="menuOverlay">
+  <nav class="menu-nav">
+    <a class="mni" data-section="fv"><span class="mni-num">01</span><span class="mni-label">Top</span><span class="mni-arrow">→</span></a>
+    <a class="mni" data-section="works"><span class="mni-num">02</span><span class="mni-label">Works</span><span class="mni-arrow">→</span></a>
+    <a class="mni" data-section="about"><span class="mni-num">03</span><span class="mni-label">About</span><span class="mni-arrow">→</span></a>
+    <a class="mni" data-section="contact"><span class="mni-num">04</span><span class="mni-label">Contact</span><span class="mni-arrow">→</span></a>
+  </nav>
+  <div class="menu-footer">
+    <a href="#" class="mfl">Instagram</a>
+    <a href="#" class="mfl">GitHub</a>
+  </div>
+</div>
+
+<div class="fv-wrap">
+  <div class="fv" id="fv">
+    <canvas class="particle-canvas" data-color="220,216,210" data-opacity="0.7"></canvas>
+    <div class="fv-inner">
+      <div class="fv-row">
+        <span class="fv-name" id="fvName">Suga Yuya</span>
+      </div>
+      <div class="fv-row-bot">
+        <span class="fv-label" id="fvLoc">Kitakyushu, Japan</span>
+        <span class="fv-label" id="fvYear">2026</span>
+      </div>
+    </div>
+    <div class="fv-center">
+      <div class="fv-div" id="fvDivTop"></div>
+      <h1 class="fv-title" id="fvTitle">Portfolio</h1>
+      <p class="fv-sub" id="fvSub">Design &amp; Observation</p>
+      <div class="fv-div" id="fvDivBot"></div>
+    </div>
+    <div class="scroll-hint" id="scrollHint">
+      <span class="scroll-hint-txt" id="scrollTxt">Scroll</span>
+      <div class="scroll-bar" id="scrollBar"></div>
+    </div>
+  </div>
+</div>
+
+<div class="works-section" id="worksSection">
+  <div class="works-sticky-wrap" id="worksStickyWrap">
+    <div class="works-sticky">
+      <header class="works-header">
+        <div class="works-header-left">
+          <span class="works-eyebrow">Selected Works</span>
+          <h2 class="works-heading">Portfolio</h2>
+        </div>
+        <div class="works-counter">
+          <span class="works-counter-cur" id="currentNum">01</span>
+          <span>&nbsp;/&nbsp;05</span>
+        </div>
+      </header>
+      <div class="cards-viewport">
+        <div class="cards-track" id="cardsTrack">
+          <a href="works/index.html" class="w-card active">
+            <span class="card-num">01</span><div class="card-side-line"></div>
+            <div class="card-bg">
+              <img src="images/work05.png" alt="小児科サイトリニューアル">
+            </div>
+            <div class="card-overlay"><span class="card-tag">Web Design</span><span class="card-title">小児科サイト<br>リニューアル</span></div>
+            <div class="card-bottom-line"></div>
+          </a>
+
+          <a href="works/project01.html" class="w-card">
+            <span class="card-num">02</span><div class="card-side-line"></div>
+            <div class="card-bg">
+              <img src="images/work04.png" alt="飲食店コーポレート">
+            </div>
+            <div class="card-overlay"><span class="card-tag">Web Design</span><span class="card-title">飲食店<br>コーポレート</span></div>
+            <div class="card-bottom-line"></div>
+          </a>
+
+          <a href="works/project02.html" class="w-card">
+            <span class="card-num">03</span><div class="card-side-line"></div>
+            <div class="card-bg">
+              <img src="images/work05.png" alt="タトゥースタジオロゴ">
+            </div>
+            <div class="card-overlay"><span class="card-tag">Graphic</span><span class="card-title">タトゥースタジオ<br>ロゴデザイン</span></div>
+            <div class="card-bottom-line"></div>
+          </a>
+
+          <a href="works/project03.html" class="w-card">
+            <span class="card-num">04</span><div class="card-side-line"></div>
+            <div class="card-bg">
+              <img src="images/work04.png" alt="LPデザイン">
+            </div>
+            <div class="card-overlay"><span class="card-tag">Landing Page</span><span class="card-title">LP<br>デザイン</span></div>
+            <div class="card-bottom-line"></div>
+          </a>
+
+          <a href="works/project04.html" class="w-card">
+            <span class="card-num">05</span><div class="card-side-line"></div>
+            <div class="card-bg">
+              <img src="images/work03.jpg" alt="デッサングラフィック">
+            </div>
+            <div class="card-overlay"><span class="card-tag">Illustration</span><span class="card-title">デッサン<br>グラフィック</span></div>
+            <div class="card-bottom-line"></div>
+          </a>
+        </div>
+      </div>
+      <div class="works-bottom">
+        <div class="progress-wrap">
+          <span class="progress-label" id="progressLabel">小児科サイトリニューアル</span>
+          <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:20%"></div></div>
+        </div>
+        <div class="scroll-down-hint"><span>↓</span><span>Scroll</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="about-section" id="aboutSection">
+  <div class="about-sticky-wrap" id="aboutStickyWrap">
+    <div class="about-sticky" id="aboutSticky">
+      <div class="about-label-overlay">
+        <span class="about-label-text" id="aboutLabel">About</span>
+      </div>
+      <div class="about-img-area" id="aboutImgArea">
+        <div class="about-portrait-bg">
+          <img src="images/about.jpg" alt="Suga Yuya Profile">
+          <span class="about-portrait-tag">Photo</span>
+        </div>
+      </div>
+      <div class="about-text-area" id="aboutTextArea">
+        <div class="about-text-left">
+          <span class="about-eyebrow">About</span>
+          <div>
+            <h2 class="about-name">Suga<br>Yuya</h2>
+            <p class="about-name-ja" style="margin-top:4px">菅 勇也 — Web &amp; Graphic Designer</p>
+          </div>
+          <p class="about-bio">製造現場の観察力を武器に<br>Webデザインへ転換。<br>感性と論理で伝わるデザインを。</p>
+        </div>
+        <div class="about-text-right">
+          <div class="about-list">
+            <span class="about-list-label">Profile</span>
+            <div class="about-list-item">北九州市 / 1998年生</div>
+            <div class="about-list-item">日建学院 Webデザイナー養成科 修了</div>
+            <div class="about-list-item">Illustrator / Photoshop エキスパート</div>
+          </div>
+          <div class="about-skills">
+            <span class="about-skills-label">Skills</span>
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">Can</span>
+            <span class="skill-tag">HTML/CSS</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Illustrator</span>
+            <span class="skill-tag">Photoshop</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="contact-section" id="contactSection">
+  <div class="contact-sticky-wrap" id="contactStickyWrap">
+    <div class="contact-sticky" id="contactSticky">
+      <canvas class="particle-canvas" data-color="220,216,210" data-opacity="0.8" data-speed="0.006"></canvas>
+      <div class="contact-inner" id="contactInner">
+        <span class="contact-eyebrow" id="cEyebrow">Contact</span>
+        <h2 class="contact-heading" id="cHeading">Let's Work<br>Together</h2>
+        <p class="contact-sub" id="cSub">お仕事のご依頼・ご相談など<br>お気軽にご連絡ください。</p>
+        <div class="contact-links">
+          <a href="mailto:yuya.07.11.18@gmail.com" class="contact-email" id="cEmail">
+            <span class="contact-link-label">Mail</span>
+            <span class="contact-link-value">yuya.07.11.18@gmail.com</span>
+            <span class="contact-link-arrow">→</span>
+          </a>
+          <a href="https://www.instagram.com/xi_941_" target="_blank" class="contact-sns-link" id="cIg">
+            <span class="contact-link-label">Instagram</span>
+            <span class="contact-link-value">@xi_941_</span>
+            <span class="contact-link-arrow">→</span>
+          </a>
+        </div>
+      </div>
+      <div class="contact-footer">
+        <span class="contact-footer-txt" id="cFootL">Suga Yuya</span>
+        <span class="contact-footer-txt" id="cFootR">© 2026</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<script src="js/main.js"></script>
+<script src="js/wave.js"></script>
+</body>
+</html>
