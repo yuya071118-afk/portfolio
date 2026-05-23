@@ -10,7 +10,7 @@ const WORKS = [
     tag:    'DARK FANTASY',
     desc:   'Where elegance meets the void.\n異形の美と装飾の狭間に宿る静寂を捉えた作品。',
     tags:   ['DARK FANTASY', 'GRAPHIC', 'SNS POST'],
-    thumb:  'images/work01.png',
+    thumb:  'images/work01.jpg',
     detail: null,
   },
   {
@@ -19,7 +19,7 @@ const WORKS = [
     tag:    'GRAPHIC',
     desc:   '白の聖性と黒の逸脱。相反するものが一体に宿る矛盾の美学。',
     tags:   ['GRAPHIC', 'CONCEPTUAL', 'SNS POST'],
-    thumb:  'images/work02.png',
+    thumb:  'images/work02.jpg',
     detail: null,
   },
   {
@@ -28,7 +28,7 @@ const WORKS = [
     tag:    'PHOTO POSTER',
     desc:   '赤と白の対比が語る孤立と覚悟。群衆の中の唯一性。',
     tags:   ['PHOTO POSTER', 'COPYWRITING'],
-    thumb:  'images/work03.png',
+    thumb:  'images/work03.jpg',
     detail: null,
   },
   {
@@ -37,7 +37,7 @@ const WORKS = [
     tag:    'FANTASY',
     desc:   '青に沈む世界を越えてでも。到達への意志を光と花で表現した。',
     tags:   ['FANTASY', 'GRAPHIC'],
-    thumb:  'images/work04.png',
+    thumb:  'images/work04.jpg',
     detail: null,
   },
   {
