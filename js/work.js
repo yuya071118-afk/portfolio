@@ -1,5 +1,6 @@
 /* ==========================================
-   PORTFOLIO — work.js (12作品＋メニュー対応版)
+   PORTFOLIO — work.js
+   カーソル制御は cursor.js に完全委譲
    ========================================== */
 
 const WORKS = [
@@ -63,7 +64,7 @@ const WORKS = [
     tag:    'RETRO',
     desc:   '過去の記憶が静かに響き渡る。ノスタルジックな世界観の構築。',
     tags:   ['RETRO', 'GRAPHIC'],
-    thumb:  'images/work01.png', 
+    thumb:  'images/work01.png',
     detail: null,
   },
   {
@@ -110,78 +111,18 @@ const WORKS = [
     tags:   ['DARK FANTASY', 'CONCEPTUAL'],
     thumb:  'images/work06.png',
     detail: null,
-  }
+  },
 ];
 
 /* ==========================================
-   動作ロジック
+   ギャラリー生成・詳細ページ
+   カーソル・addHover は cursor.js が担当
    ========================================== */
 
-// ---- カーソル ----
-const curDot  = document.getElementById('cur');
-const curRing = document.getElementById('cur-r');
-let mx = 0, my = 0, rx = 0, ry = 0;
-
-document.addEventListener('mousemove', e => {
-  mx = e.clientX; my = e.clientY;
-  if(curDot){
-    curDot.style.left = mx + 'px';
-    curDot.style.top  = my + 'px';
-  }
-});
-
-(function animRing() {
-  rx += (mx - rx) * 0.11;
-  ry += (my - ry) * 0.11;
-  if(curRing){
-    curRing.style.left = rx + 'px';
-    curRing.style.top  = ry + 'px';
-  }
-  requestAnimationFrame(animRing);
-})();
-
-// ★ハンバーガーメニュー等、他のファイルからも使えるようにwindowオブジェクトに追加
-window.addHover = function(el) {
-  if(!el || !curDot || !curRing) return;
-  el.addEventListener('mouseenter', () => { curDot.classList.add('h'); curRing.classList.add('h'); });
-  el.addEventListener('mouseleave', () => { curDot.classList.remove('h'); curRing.classList.remove('h'); });
-}
-// 互換性のためローカル変数にも代入
-const addHover = window.addHover;
-
-// カーソル制御 (main.jsより移植)
-const isTouch = window.matchMedia('(pointer:coarse)').matches;
-const cur  = document.getElementById('cursor');
-const ring = document.getElementById('cursorRing');
-
-if (!isTouch && cur && ring) {
-  let mx = 0, my = 0, rx = 0, ry = 0;
-  
-  document.addEventListener('mousemove', e => {
-    mx = e.clientX;
-    my = e.clientY;
-  });
-
-  (function animateCursor() {
-    cur.style.left = mx + 'px';
-    cur.style.top  = my + 'px';
-    
-    // リングの追従（イージング）
-    rx += (mx - rx) * 0.1;
-    ry += (my - ry) * 0.1;
-    ring.style.left = rx + 'px';
-    ring.style.top  = ry + 'px';
-    
-    requestAnimationFrame(animateCursor);
-  })();
-}
-
-// ---- ギャラリーを動的生成 ----
 const gallery = document.getElementById('gallery');
 
 WORKS.forEach((w, i) => {
-  const imgSrc = '../' + w.thumb; 
-  
+  const imgSrc = '../' + w.thumb;
   const card = document.createElement('div');
   card.className = 'card';
   card.innerHTML = `
@@ -195,11 +136,10 @@ WORKS.forEach((w, i) => {
     </div>
   `;
   card.addEventListener('click', () => openDetail(i));
-  addHover(card);
+  if(typeof window.addHover === 'function') window.addHover(card);
   if(gallery) gallery.appendChild(card);
 });
 
-// Stagger 登場
 window.addEventListener('load', () => {
   document.querySelectorAll('.card').forEach((c, i) => {
     setTimeout(() => c.classList.add('vis'), 120 + i * 80);
@@ -216,19 +156,18 @@ const dDesc    = document.getElementById('d-desc');
 const dTags    = document.getElementById('d-tags');
 const backBtn  = document.getElementById('back');
 
-if(backBtn) addHover(backBtn);
+if(backBtn && typeof window.addHover === 'function') window.addHover(backBtn);
 
 function openDetail(i) {
   const w = WORKS[i];
-  const path = w.detail || w.thumb;
-  const imgSrc = '../' + path;
+  const imgSrc = '../' + (w.detail || w.thumb);
 
   if(curtain) curtain.className = 'curtain closing';
 
   setTimeout(() => {
     if(dEyebrow) dEyebrow.textContent = w.num;
-    if(dTitle) dTitle.textContent   = w.title;
-    if(dDesc) dDesc.textContent    = w.desc;
+    if(dTitle)   dTitle.textContent   = w.title;
+    if(dDesc)    dDesc.textContent    = w.desc;
 
     if(dImg) {
       dImg.innerHTML = `
@@ -239,9 +178,7 @@ function openDetail(i) {
     }
 
     if(dTags) {
-      dTags.innerHTML = w.tags
-        .map(t => `<span class="d-tag">${t}</span>`)
-        .join('');
+      dTags.innerHTML = w.tags.map(t => `<span class="d-tag">${t}</span>`).join('');
     }
 
     if(detail) detail.style.display = 'flex';
@@ -250,8 +187,8 @@ function openDetail(i) {
       if(curtain) curtain.className = 'curtain opening';
       setTimeout(() => {
         if(curtain) curtain.className = 'curtain';
-        if(detail) detail.classList.add('show');
-        if(dImg) dImg.classList.add('in');
+        if(detail)  detail.classList.add('show');
+        if(dImg)    dImg.classList.add('in');
         if(backBtn) backBtn.classList.add('show');
       }, 560);
     }, 60);
@@ -262,11 +199,11 @@ function openDetail(i) {
 function closeDetail() {
   if(curtain) curtain.className = 'curtain closing';
   if(backBtn) backBtn.classList.remove('show');
-  if(detail) detail.classList.remove('show');
-  if(dImg) dImg.classList.remove('in');
-  
+  if(detail)  detail.classList.remove('show');
+  if(dImg)    dImg.classList.remove('in');
+
   setTimeout(() => {
-    if(detail) detail.style.display = 'none';
+    if(detail)  detail.style.display = 'none';
     if(curtain) curtain.className = 'curtain opening';
     setTimeout(() => { if(curtain) curtain.className = 'curtain'; }, 560);
   }, 510);

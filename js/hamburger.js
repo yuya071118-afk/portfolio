@@ -17,15 +17,23 @@ function smoothScrollTo(target, duration){
 const menuBtn     = document.getElementById('menuBtn');
 const menuOverlay = document.getElementById('menuOverlay');
 
-// menuBtn が存在しないページでは何もしない
 if(menuBtn && menuOverlay){
   let menuOpen = false;
+
+  // タッチ端末のみスクロール防止（PCはoverflowを触らない）
+  function preventScroll(e){ e.preventDefault(); }
 
   menuBtn.addEventListener('click', () => {
     menuOpen = !menuOpen;
     menuBtn.classList.toggle('open', menuOpen);
     menuOverlay.classList.toggle('open', menuOpen);
-    document.body.style.overflow = menuOpen ? 'hidden' : '';
+
+    if(menuOpen){
+      // タッチスクロールだけ止める（PCのスクロールバーはそのまま）
+      document.addEventListener('touchmove', preventScroll, { passive: false });
+    } else {
+      document.removeEventListener('touchmove', preventScroll);
+    }
   });
 
   document.querySelectorAll('.mni').forEach(item => {
@@ -40,26 +48,23 @@ if(menuBtn && menuOverlay){
       menuOpen = false;
       menuBtn.classList.remove('open');
       menuOverlay.classList.remove('open');
-      document.body.style.overflow = '';
+      document.removeEventListener('touchmove', preventScroll);
       if(targets[sec] !== undefined) smoothScrollTo(targets[sec], 700);
     });
   });
 
   // ━━ メニューボタンの色切替 ━━
-  // main.js に依存せず、自分でDOMを取得して判定する
   function updateMenuColor(){
-    // worksページなど .fv-wrap がない場合は常にダーク不要（白のまま）
-    const fvWrapEl   = document.querySelector('.fv-wrap');
+    const fvWrapEl    = document.querySelector('.fv-wrap');
     const contactSWEl = document.getElementById('contactStickyWrap');
 
     if(!fvWrapEl){
-      // worksページ：背景は常に黒なのでボタンは白のまま
       menuBtn.classList.remove('dark');
       return;
     }
 
-    const sy  = scrollY;
-    const fvH = fvWrapEl.offsetHeight;
+    const sy   = scrollY;
+    const fvH  = fvWrapEl.offsetHeight;
     const cTop = (typeof cachedContactTop !== 'undefined') ? cachedContactTop : Infinity;
     const inLight = sy > fvH * 0.4 &&
                     (!contactSWEl || sy < cTop + contactSWEl.offsetHeight * 0.3);

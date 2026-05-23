@@ -23,19 +23,57 @@ html, body {
   min-height: 100vh;
 }
 
-/* 波キャンバスを画面全体に固定配置 */
+/* 波キャンバス */
 #waveCanvas {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
   z-index: 90;
   pointer-events: none;
 }
 
 /* ==========================================
-   HEADER & HAMBURGER MENU (style.cssから完全移植)
+   PC CURSOR
+   cursor.js が #cur / #cur-r を制御する
+   ========================================== */
+@media(pointer:fine){
+  body { cursor: none; }
+
+  .cur, .cur-r {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+  }
+
+  /* ドット */
+  .cur {
+    width: 7px;
+    height: 7px;
+    background: var(--white);
+    transition: background 0.3s, width 0.3s, height 0.3s;
+  }
+
+  /* リング */
+  .cur-r {
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(236,232,224,0.4);
+    transition: width 0.3s, height 0.3s, border-color 0.3s;
+  }
+
+  /* ホバー状態 */
+  .cur.h   { background: var(--red); width: 5px; height: 5px; }
+  .cur-r.h { width: 48px; height: 48px; border-color: rgba(139,26,26,0.5); }
+}
+
+@media(pointer:coarse){
+  .cur, .cur-r { display: none !important; }
+}
+
+/* ==========================================
+   HEADER & HAMBURGER MENU
    ========================================== */
 header {
   position: fixed;
@@ -53,7 +91,6 @@ header {
   font-weight: 300;
 }
 
-/* ━━ HAMBURGER ━━ */
 .menu-btn{position:fixed;top:28px;right:32px;z-index:500;background:none;border:none;
   display:flex;flex-direction:column;align-items:flex-end;gap:6px;padding:8px;cursor:pointer;}
 .mbl{display:block;height:1px;background:#e8e4df;transition:all 0.4s cubic-bezier(0.16,1,0.3,1);}
@@ -63,7 +100,6 @@ header {
 .menu-btn.open .mbl:nth-child(1){width:28px;transform:rotate(-45deg) translateY(4px);background:#1a1816!important;}
 .menu-btn.open .mbl:nth-child(2){width:28px;transform:rotate(45deg) translateY(-4px);background:#1a1816!important;}
 
-/* ━━ MENU OVERLAY ━━ */
 .menu-overlay{position:fixed;inset:0;z-index:400;background:#f0ede8;
   display:flex;flex-direction:column;justify-content:center;padding:80px 52px;
   opacity:0;pointer-events:none;transition:opacity 0.5s cubic-bezier(0.16,1,0.3,1);}
@@ -85,8 +121,9 @@ header {
 .menu-footer{margin-top:48px;display:flex;gap:24px;}
 .mfl{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;
   color:rgba(26,24,22,0.25);text-decoration:none;}
+
 /* ==========================================
-   PORTFOLIO - Gallery & Cards
+   GALLERY & CARDS
    ========================================== */
 .gallery {
   padding: 8rem 2.5rem 5rem;
@@ -151,7 +188,9 @@ header {
   color: rgba(236,232,224,0.2);
 }
 
-/* カーテン */
+/* ==========================================
+   カーテン
+   ========================================== */
 .curtain {
   position: fixed; inset: 0;
   z-index: 300;
@@ -171,7 +210,9 @@ header {
   transition: transform 0.55s cubic-bezier(0.76,0,0.24,1);
 }
 
-/* 詳細ページ */
+/* ==========================================
+   詳細ページ（上:画像 / 下:テキスト）
+   ========================================== */
 .detail {
   position: fixed; inset: 0;
   z-index: 200;
@@ -241,7 +282,9 @@ header {
 .detail.show .d-tags  { opacity: 1; transform: translateY(0); }
 .detail.show .d-rule  { transform: scaleX(1); }
 
-/* 戻るボタン */
+/* ==========================================
+   戻るボタン
+   ========================================== */
 .back {
   position: fixed; top: 1.6rem; left: 3rem;
   z-index: 400;
@@ -259,16 +302,3 @@ header {
 }
 .back:hover::before { width: 32px; }
 .back.show { opacity: 1; pointer-events: all; }
-
-
-/* ━━ PC CURSOR (style.cssより移植) ━━ */
-@media(pointer:fine){
-  body{cursor:none;}
-  .cursor,.cursor-ring{position:fixed;border-radius:50%;pointer-events:none;
-    z-index:9999; transform:translate(-50%,-50%); transition:transform 0.1s ease-out;}
-  .cursor{width:7px;height:7px; background: #ece8e0; /* 必要に応じて色調整 */}
-  .cursor-ring{width:34px;height:34px;border:1px solid #555555;}
-}
-@media(pointer:coarse){
-  .cursor,.cursor-ring{display:none!important;}
-}
