@@ -116,9 +116,9 @@ header:has(.menu-btn.open) .logo {
   opacity:0;pointer-events:none;transition:opacity 0.5s cubic-bezier(0.16,1,0.3,1);}
 .menu-overlay.open{opacity:1;pointer-events:all;}
 .menu-nav{display:flex;flex-direction:column;}
-.mni{display:flex;align-items:center;padding:20px 0;border-bottom:1px solid rgba(236,232,224,0.08);
+.mni{display:flex;align-items:center;padding:20px 0;border-bottom:1px solid rgba(26,24,22,0.07);
   text-decoration:none;overflow:hidden;cursor:pointer;}
-.mni:first-child{border-top:1px solid rgba(236,232,224,0.08);}
+.mni:first-child{border-top:1px solid rgba(26,24,22,0.07);}
 .mni-num{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:0.12em;
   color:rgba(236,232,224,0.5);width:40px;flex-shrink:0;}
 .mni-label{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,6vw,64px);font-weight:200;

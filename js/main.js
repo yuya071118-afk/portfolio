@@ -1,6 +1,3 @@
-// ==========================================
-// main.js - サイト全体のUI・スクロールアニメーション
-// ==========================================
 
 const isTouch = window.matchMedia('(pointer:coarse)').matches;
 const cur  = document.getElementById('cursor');
