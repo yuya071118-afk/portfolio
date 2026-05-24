@@ -226,30 +226,43 @@ body{font-family:'Noto Sans JP',sans-serif;background:#f0ede8;overflow-x:hidden;
 .about-portrait-tag{position:absolute;bottom:14px;left:14px;
   font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.6);z-index:2;}
 
-.about-text-area{position:absolute;inset:0;
-  padding:52px 40px;
+.about-text-area{
+  position:absolute;inset:0;
+  padding:60px 40px 60px;
   display:flex;flex-direction:column;justify-content:center;
-  opacity:0;transform:translateY(20px);will-change:opacity,transform;z-index:100;gap:24px;}
-.about-text-left{display:flex;flex-direction:column;gap:12px;}
-.about-eyebrow{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#666;
+  opacity:0;transform:translateY(20px);will-change:opacity,transform;z-index:100;gap:0;}
+
+/* 名前ブロック */
+.about-text-left{display:flex;flex-direction:column;gap:10px;margin-bottom:28px;}
+.about-eyebrow{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#999;
   display:flex;align-items:center;gap:8px;}
-.about-eyebrow::before{content:'';width:14px;height:1px;background:#888;display:block;flex-shrink:0;}
-.about-name{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,10vw,88px);
-  font-weight:200;letter-spacing:0.04em;color:#1a1816;line-height:0.98;}
-.about-name-ja{font-size:12px;font-weight:200;letter-spacing:0.14em;color:#888;}
-.about-bio{font-size:clamp(12px,1.4vw,14px);font-weight:300;line-height:2.4;color:rgba(26,24,22,0.5);max-width:100%;}
-.about-text-right{display:flex;flex-direction:row;gap:40px;flex-wrap:wrap;}
-.about-list{display:flex;flex-direction:column;gap:5px;}
-.about-list-label{font-size:12px;letter-spacing:0.16em;text-transform:uppercase;
-  color:rgba(100,100,100,0.5);margin-bottom:2px;}
-.about-list-item{display:flex;align-items:flex-start;gap:8px;
-  font-size:12px;font-weight:300;color:rgba(26,24,22,0.5);line-height:2.0;}
-.about-list-item::before{content:'—';color:#999;flex-shrink:0;font-size:10px;}
-.about-skills{display:flex;flex-wrap:wrap;gap:5px;}
-.about-skills-label{font-size:12px;letter-spacing:0.16em;text-transform:uppercase;
-  color:rgba(100,100,100,0.5);width:100%;margin-bottom:1px;}
-.skill-tag{font-size:12px;letter-spacing:0.04em;padding:3px 10px;border-radius:100px;
-  border:1px solid rgba(26,24,22,0.1);color:rgba(26,24,22,0.38);}
+.about-eyebrow::before{content:'';width:14px;height:1px;background:#bbb;display:block;flex-shrink:0;}
+.about-name{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,10vw,88px);
+  font-weight:200;letter-spacing:0.04em;color:#1a1816;line-height:0.95;}
+.about-name-ja{font-size:11px;font-weight:200;letter-spacing:0.14em;color:#aaa;margin-top:6px;}
+.about-bio{font-size:13px;font-weight:300;line-height:2.2;color:rgba(26,24,22,0.45);max-width:100%;}
+
+/* 仕切り線 */
+.about-text-right{
+  display:flex;flex-direction:column;gap:24px;
+  padding-top:28px;
+  border-top:1px solid rgba(26,24,22,0.08);
+}
+
+/* Profile */
+.about-list{display:flex;flex-direction:column;gap:2px;}
+.about-list-label{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;
+  color:rgba(100,100,100,0.45);margin-bottom:8px;}
+.about-list-item{display:flex;align-items:flex-start;gap:10px;
+  font-size:12px;font-weight:300;color:rgba(26,24,22,0.5);line-height:1.9;}
+.about-list-item::before{content:'—';color:#bbb;flex-shrink:0;font-size:10px;margin-top:2px;}
+
+/* Skills */
+.about-skills{display:flex;flex-wrap:wrap;gap:6px;}
+.about-skills-label{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;
+  color:rgba(100,100,100,0.45);width:100%;margin-bottom:4px;}
+.skill-tag{font-size:11px;letter-spacing:0.06em;padding:4px 12px;border-radius:100px;
+  border:1px solid rgba(26,24,22,0.12);color:rgba(26,24,22,0.4);}
 
 /* ━━ CONTACT ━━ */
 .contact-section{position:relative;background:#f0ede8;z-index:1;}

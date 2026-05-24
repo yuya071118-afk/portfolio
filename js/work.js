@@ -182,6 +182,7 @@ function openDetail(i) {
     }
 
     if(detail) detail.style.display = 'flex';
+    document.body.classList.add('detail-open');
 
     setTimeout(() => {
       if(curtain) curtain.className = 'curtain opening';
@@ -204,9 +205,46 @@ function closeDetail() {
 
   setTimeout(() => {
     if(detail)  detail.style.display = 'none';
+    document.body.classList.remove('detail-open');
     if(curtain) curtain.className = 'curtain opening';
     setTimeout(() => { if(curtain) curtain.className = 'curtain'; }, 560);
   }, 510);
 }
 
 window.closeDetail = closeDetail;
+
+// ==========================================
+// ロゴ下線 ホバーアニメーション
+// ==========================================
+window.addEventListener('DOMContentLoaded', () => {
+  const logo = document.querySelector('.logo');
+  if(!logo) return;
+
+  logo.style.position = 'relative';
+  logo.style.display  = 'inline-block';
+
+  const line = document.createElement('span');
+  line.style.cssText = [
+    'display:block',
+    'position:absolute',
+    'left:0',
+    'bottom:-3px',
+    'width:100%',
+    'height:1px',
+    'background:#ece8e0',
+    'transform:scaleX(0)',
+    'transform-origin:left',
+    'transition:transform 0.5s cubic-bezier(0.16,1,0.3,1)',
+    'pointer-events:none',
+  ].join(';');
+
+  logo.appendChild(line);
+
+  // ホバーで表示・非表示
+  logo.addEventListener('mouseenter', () => {
+    line.style.transform = 'scaleX(1)';
+  });
+  logo.addEventListener('mouseleave', () => {
+    line.style.transform = 'scaleX(0)';
+  });
+});
