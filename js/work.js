@@ -10,7 +10,7 @@ const WORKS = [
     tag:    'DARK FANTASY',
     desc:   'Where elegance meets the void.\n異形の美と装飾の狭間に宿る静寂を捉えた作品。',
     tags:   ['DARK FANTASY', 'GRAPHIC', 'SNS POST'],
-    thumb:  'images/works01.jpg',
+    thumb:  'images/works01.png',
     detail: null,
   },
   {
@@ -109,7 +109,7 @@ const WORKS = [
     tag:    'DARK FANTASY',
     desc:   'すべての熱量が失われた、凍てつく世界の中心。',
     tags:   ['DARK FANTASY', 'CONCEPTUAL'],
-    thumb:  'images/art.jpg',
+    thumb:  'images/works09.png',
     detail: null,
   },
 ];
