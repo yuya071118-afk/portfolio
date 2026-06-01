@@ -37,7 +37,7 @@ const WORKS = [
     tag:    'FANTASY',
     desc:   '青に沈む世界を越えてでも。到達への意志を光と花で表現した。',
     tags:   ['FANTASY', 'GRAPHIC'],
-    thumb:  'images/works04.jpg',
+    thumb:  'images/works05.png',
     detail: null,
   },
   {
@@ -64,7 +64,7 @@ const WORKS = [
     tag:    'RETRO',
     desc:   '過去の記憶が静かに響き渡る。ノスタルジックな世界観の構築。',
     tags:   ['RETRO', 'GRAPHIC'],
-    thumb:  'images/works07.png',
+    thumb:  'images/works011.png',
     detail: null,
   },
   {
@@ -82,7 +82,7 @@ const WORKS = [
     tag:    'ABSTRACT',
     desc:   '流動する形と融解する境界。現代の不確実性を表現。',
     tags:   ['ABSTRACT', '3D ART'],
-    thumb:  'images/worsk05.png',
+    thumb:  'images/works10.png',
     detail: null,
   },
   {
