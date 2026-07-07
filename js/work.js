@@ -10,7 +10,7 @@ const WORKS = [
     tag:    'DARK FANTASY',
     desc:   'Where elegance meets the void.\n異形の美と装飾の狭間に宿る静寂を捉えた作品。',
     tags:   ['DARK FANTASY', 'GRAPHIC', 'SNS POST'],
-    thumb:  'images/works01.png',
+    thumb:  'images/works01.jpg',
     detail: null,
   },
   {
@@ -19,7 +19,7 @@ const WORKS = [
     tag:    'GRAPHIC',
     desc:   '白の聖性と黒の逸脱。相反するものが一体に宿る矛盾の美学。',
     tags:   ['GRAPHIC', 'CONCEPTUAL', 'SNS POST'],
-    thumb:  'images/works02.jpg',
+    thumb:  'images/works02.png',
     detail: null,
   },
   {
@@ -28,7 +28,7 @@ const WORKS = [
     tag:    'PHOTO POSTER',
     desc:   '赤と白の対比が語る孤立と覚悟。群衆の中の唯一性。',
     tags:   ['PHOTO POSTER', 'COPYWRITING'],
-    thumb:  'images/works03.jpg',
+    thumb:  'images/works03.png',
     detail: null,
   },
   {
@@ -37,7 +37,7 @@ const WORKS = [
     tag:    'FANTASY',
     desc:   '青に沈む世界を越えてでも。到達への意志を光と花で表現した。',
     tags:   ['FANTASY', 'GRAPHIC'],
-    thumb:  'images/works05.png',
+    thumb:  'images/works04.jpg',
     detail: null,
   },
   {
@@ -46,7 +46,7 @@ const WORKS = [
     tag:    'TYPOGRAPHY',
     desc:   '建築の幾何学と縦組み文字が溶け合う。都市の静けさに潜む構造美。',
     tags:   ['TYPOGRAPHY', 'PHOTOGRAPHY'],
-    thumb:  'images/works04.png',
+    thumb:  'images/works05.png',
     detail: null,
   },
   {
@@ -55,7 +55,7 @@ const WORKS = [
     tag:    'MINIMAL',
     desc:   '無の中に存在する光。一語と一円が宇宙を作る。',
     tags:   ['MINIMAL', 'TYPOGRAPHY'],
-    thumb:  'images/works08.png',
+    thumb:  'images/works06.png',
     detail: null,
   },
   {
@@ -64,7 +64,7 @@ const WORKS = [
     tag:    'RETRO',
     desc:   '過去の記憶が静かに響き渡る。ノスタルジックな世界観の構築。',
     tags:   ['RETRO', 'GRAPHIC'],
-    thumb:  'images/works011.png',
+    thumb:  'images/works07.jpg',
     detail: null,
   },
   {
@@ -73,7 +73,7 @@ const WORKS = [
     tag:    'CYBER',
     desc:   '夜の光が交錯するサイバーパンクな都市の断片。',
     tags:   ['CYBER', 'PHOTOGRAPHY'],
-    thumb:  'images/works06.png',
+    thumb:  'images/works08.jpg',
     detail: null,
   },
   {
@@ -82,7 +82,7 @@ const WORKS = [
     tag:    'ABSTRACT',
     desc:   '流動する形と融解する境界。現代の不確実性を表現。',
     tags:   ['ABSTRACT', '3D ART'],
-    thumb:  'images/works10.png',
+    thumb:  'images/works09.png',
     detail: null,
   },
   {
@@ -91,7 +91,7 @@ const WORKS = [
     tag:    'MINIMAL',
     desc:   '静寂な空間に漂う、目に見えないかすかな気配。',
     tags:   ['MINIMAL', 'GRAPHIC'],
-    thumb:  'images/works02.png',
+    thumb:  'images/works10.png',
     detail: null,
   },
   {
@@ -100,7 +100,7 @@ const WORKS = [
     tag:    'FANTASY',
     desc:   '光と影が境界線で踊る。幻想的な夜明けの風景。',
     tags:   ['FANTASY', 'PHOTO POSTER'],
-    thumb:  'images/works03.png',
+    thumb:  'images/works10.jpg',
     detail: null,
   },
   {
@@ -109,7 +109,7 @@ const WORKS = [
     tag:    'DARK FANTASY',
     desc:   'すべての熱量が失われた、凍てつく世界の中心。',
     tags:   ['DARK FANTASY', 'CONCEPTUAL'],
-    thumb:  'images/works09.png',
+    thumb:  'images/works12.png',
     detail: null,
   },
 ];

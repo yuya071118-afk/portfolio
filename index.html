@@ -31,6 +31,13 @@
   </svg>
 </div>
 
+<nav class="pc-nav" id="pcNav">
+  <a class="pc-nav-item" data-section="fv"><span class="pc-nav-num">01</span>Top</a>
+  <a class="pc-nav-item" data-section="works"><span class="pc-nav-num">02</span>Works</a>
+  <a class="pc-nav-item" data-section="about"><span class="pc-nav-num">03</span>About</a>
+  <a class="pc-nav-item" data-section="contact"><span class="pc-nav-num">04</span>Contact</a>
+</nav>
+
 <button class="menu-btn" id="menuBtn">
   <span class="mbl"></span><span class="mbl"></span>
 </button>
@@ -79,45 +86,28 @@
       <header class="works-header">
         <div class="works-header-left">
           <span class="works-eyebrow">Selected Works</span>
-          <h2 class="works-heading">Portfolio</h2>
+          <h2 class="works-heading">Works</h2>
         </div>
         <div class="works-counter">
           <span class="works-counter-cur" id="currentNum">01</span>
           <span>&nbsp;/&nbsp;05</span>
         </div>
       </header>
-      <div class="cards-viewport">
-        <div class="cards-track" id="cardsTrack">
-          <a href="works/index.html" class="w-card active">
-            <span class="card-num">01</span><div class="card-side-line"></div>
-            <div class="card-bg"><img src="images/after01.jpg" alt="小児科サイトリニューアル"></div>
-            <div class="card-overlay"><span class="card-tag">Web Design</span><span class="card-title">小児科サイト<br>リニューアル</span></div>
-            <div class="card-bottom-line"></div>
-          </a>
-          <a href="works/project01.html" class="w-card">
-            <span class="card-num">02</span><div class="card-side-line"></div>
-            <div class="card-bg"><img src="images/after02.jpg" alt="飲食店コーポレート"></div>
-            <div class="card-overlay"><span class="card-tag">Web Design</span><span class="card-title">飲食店<br>コーポレート</span></div>
-            <div class="card-bottom-line"></div>
-          </a>
-          <a href="works/project02.html" class="w-card">
-            <span class="card-num">03</span><div class="card-side-line"></div>
-            <div class="card-bg"><img src="images/works06.png" alt="タトゥースタジオロゴ"></div>
-            <div class="card-overlay"><span class="card-tag">Graphic</span><span class="card-title">タトゥースタジオ<br>ロゴデザイン</span></div>
-            <div class="card-bottom-line"></div>
-          </a>
-          <a href="works/project03.html" class="w-card">
-            <span class="card-num">04</span><div class="card-side-line"></div>
-            <div class="card-bg"><img src="images/works04.png" alt="LPデザイン"></div>
-            <div class="card-overlay"><span class="card-tag">Landing Page</span><span class="card-title">LP<br>デザイン</span></div>
-            <div class="card-bottom-line"></div>
-          </a>
-          <a href="works/project04.html" class="w-card">
-            <span class="card-num">05</span><div class="card-side-line"></div>
-            <div class="card-bg"><img src="images/works011.png" alt="デッサングラフィック"></div>
-            <div class="card-overlay"><span class="card-tag">Illustration</span><span class="card-title">デッサン<br>グラフィック</span></div>
-            <div class="card-bottom-line"></div>
-          </a>
+      <div class="works-main">
+        <div class="cards-viewport">
+          <div class="cards-track" id="cardsTrack">
+            <a href="works/index.html" class="w-card active"><div class="card-side-line"></div><div class="card-bg"><img src="images/after01.jpg" alt="小児科サイトリニューアル"></div><div class="card-bottom-line"></div></a>
+            <a href="works/project01.html" class="w-card"><div class="card-side-line"></div><div class="card-bg"><img src="images/after02.jpg" alt="飲食店コーポレート"></div><div class="card-bottom-line"></div></a>
+            <a href="works/project02.html" class="w-card"><div class="card-side-line"></div><div class="card-bg"><img src="images/works07.jpg" alt="タトゥースタジオロゴ"></div><div class="card-bottom-line"></div></a>
+            <a href="works/project03.html" class="w-card"><div class="card-side-line"></div><div class="card-bg"><img src="images/works08.jpg" alt="LPデザイン"></div><div class="card-bottom-line"></div></a>
+            <a href="works/project04.html" class="w-card"><div class="card-side-line"></div><div class="card-bg"><img src="images/works06.png" alt="デッサングラフィック"></div><div class="card-bottom-line"></div></a>
+          </div>
+        </div>
+        <div class="works-info" id="worksInfo">
+          <span class="works-info-cat" id="wCat">Web Design</span>
+          <h3 class="works-info-title" id="wTitle">小児科サイト<br>リニューアル</h3>
+          <p class="works-info-desc" id="wDesc">初めての受診でも迷わない。保護者の行動観察から導線を再設計した小児科サイト。</p>
+          <a class="works-info-link" id="wLink" href="works/index.html">View Project<span class="wil-arrow">→</span></a>
         </div>
       </div>
       <div class="works-bottom">
@@ -137,35 +127,43 @@
       <div class="about-label-overlay">
         <span class="about-label-text" id="aboutLabel">About</span>
       </div>
-      <div class="about-img-area" id="aboutImgArea">
-        <div class="about-portrait-bg">
-          <img src="images/about.jpg" alt="Suga Yuya Profile">
+      <div class="about-content" id="aboutContent">
+        <div class="about-portrait">
+          <div class="about-portrait-bg"><img src="images/about.jpg" alt="Suga Yuya"></div>
+          <span class="about-portrait-cap">Kanda, Japan</span>
         </div>
-      </div>
-      <div class="about-text-area" id="aboutTextArea">
-        <div class="about-text-left">
+        <div class="about-info">
           <span class="about-eyebrow">About</span>
-          <div>
-            <h2 class="about-name">Suga<br>Yuya</h2>
-            <p class="about-name-ja" style="margin-top:4px">菅 勇也 — Web &amp; Graphic Designer</p>
-          </div>
-          <p class="about-bio">製造現場の観察力を武器に<br>Webデザインへ転換。<br>感性と論理で伝わるデザインを。</p>
-        </div>
-        <div class="about-text-right">
-          <div class="about-list">
-            <span class="about-list-label">Profile</span>
-            <div class="about-list-item">北九州市 / 1998年生</div>
-            <div class="about-list-item">日建学院 Webデザイナー養成科 修了</div>
-            <div class="about-list-item">Illustrator / Photoshop エキスパート</div>
-          </div>
-          <div class="about-skills">
-            <span class="about-skills-label">Skills</span>
-            <span class="skill-tag">Figma</span>
-            <span class="skill-tag">Canva</span>
-            <span class="skill-tag">HTML/CSS</span>
-            <span class="skill-tag">JavaScript</span>
-            <span class="skill-tag">Illustrator</span>
-            <span class="skill-tag">Photoshop</span>
+          <h2 class="about-name"><span class="nm-line">Suga</span> <span class="nm-line">Yuya</span></h2>
+          <p class="about-name-ja">菅 勇也 — Web &amp; Graphic Designer</p>
+          <p class="about-bio">ものづくりの現場で、不良を見抜くのも、工程を整えるのも、すべては「観察」から始まりました。その習慣をそのままデザインへ。<br>見た目を整える前に、まず使う人の行動を観る。感性と論理の両輪で、伝わるデザインを組み立てます。</p>
+          <div class="about-detail">
+            <div class="about-career">
+              <span class="about-block-label">Career</span>
+              <div class="tl">
+                <div class="tl-item"><span class="tl-dot"></span><div class="tl-body"><b>製造現場</b><span class="tl-year">〜 2023</span>観察と、手を動かす習慣を培う</div></div>
+                <div class="tl-item"><span class="tl-dot"></span><div class="tl-body"><b>日建学院 Webデザイナー養成科</b><span class="tl-year">2024</span>基礎から実制作まで学び修了</div></div>
+                <div class="tl-item"><span class="tl-dot"></span><div class="tl-body"><b>Web &amp; Graphic Designer</b><span class="tl-year">2025 〜</span>制作・デザインの実務に取り組む</div></div>
+              </div>
+            </div>
+            <div class="about-side">
+              <div class="about-profile">
+                <span class="about-block-label">Profile</span>
+                <div class="about-profile-item">苅田町 / 1998年生</div>
+                <div class="about-profile-item">Illustrator / Photoshop エキスパート</div>
+              </div>
+              <div class="about-skills">
+                <span class="about-block-label">Skills</span>
+                <div class="about-skills-tags">
+                  <span class="skill-tag">Figma</span>
+                  <span class="skill-tag">Canva</span>
+                  <span class="skill-tag">HTML/CSS</span>
+                  <span class="skill-tag">JavaScript</span>
+                  <span class="skill-tag">Illustrator</span>
+                  <span class="skill-tag">Photoshop</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

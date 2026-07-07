@@ -75,3 +75,39 @@ if(menuBtn && menuOverlay){
   window.addEventListener('scroll', updateMenuColor, { passive: true });
   updateMenuColor();
 }
+
+// PC nav
+(function(){
+  const pcNav = document.getElementById('pcNav');
+  if(!pcNav) return;
+  const fvWrapEl    = document.querySelector('.fv-wrap');
+  const contactSWEl = document.getElementById('contactStickyWrap');
+
+  document.querySelectorAll('.pc-nav-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const sec = item.dataset.section;
+      const targets = {
+        fv:      0,
+        works:   typeof cachedWorksTop   !== 'undefined' ? cachedWorksTop   : undefined,
+        about:   typeof cachedAboutTop   !== 'undefined' ? cachedAboutTop   : undefined,
+        contact: typeof cachedContactTop !== 'undefined' ? cachedContactTop : undefined,
+      };
+      if(typeof smoothScrollTo === 'function' && targets[sec] !== undefined){
+        smoothScrollTo(targets[sec], 700);
+      }
+    });
+  });
+
+  function updatePcNavColor(){
+    if(!fvWrapEl) return;
+    const sy   = scrollY;
+    const fvH  = fvWrapEl.offsetHeight;
+    const cTop = (typeof cachedContactTop !== 'undefined') ? cachedContactTop : Infinity;
+    const inLight = sy > fvH * 0.4 &&
+                    (!contactSWEl || sy < cTop + contactSWEl.offsetHeight * 0.3);
+    pcNav.classList.toggle('dark', inLight);
+  }
+  window.addEventListener('scroll', updatePcNavColor, { passive: true });
+  window.addEventListener('load', updatePcNavColor);
+  updatePcNavColor();
+})();

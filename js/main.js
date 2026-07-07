@@ -37,11 +37,36 @@ const wCards=Array.from(document.querySelectorAll('.w-card'));
 
 const TOTAL=wCards.length;
 const wLabels=['小児科サイトリニューアル','飲食店コーポレート','タトゥースタジオロゴ','LPデザイン','デッサン・グラフィック'];
+const wData=[
+  {cat:'Web Design',   title:'小児科サイトリニューアル', title2:'小児科サイト<br>リニューアル',   desc:'初めての受診でも迷わない。保護者の行動観察から導線を再設計した小児科サイト。', link:'works/index.html'},
+  {cat:'Web Design',   title:'飲食店コーポレート',       title2:'飲食店<br>コーポレート',         desc:'料理の魅力を静かに際立たせる、余白を活かしたコーポレートサイト。',           link:'works/project01.html'},
+  {cat:'Graphic',      title:'タトゥースタジオロゴ',     title2:'タトゥースタジオ<br>ロゴデザイン', desc:'闇と美をモチーフに、鋭さと静けさを込めたスタジオのロゴマーク。',             link:'works/project02.html'},
+  {cat:'Landing Page', title:'LPデザイン',               title2:'LP<br>デザイン',                 desc:'訴求を一直線に。行動につなげる構成にこだわったランディングページ。',         link:'works/project03.html'},
+  {cat:'Illustration', title:'デッサン・グラフィック',   title2:'デッサン<br>グラフィック',       desc:'手で捉えた光と陰影。観察の積み重ねから生まれたグラフィック表現。',           link:'works/project04.html'},
+];
+let lastWorksIdx=-1;
+function updateWorksInfo(idx){
+  const panel=document.getElementById('worksInfo');
+  const d=wData[idx];
+  if(!panel||!d) return;
+  panel.classList.add('swap');
+  setTimeout(()=>{
+    const cat=document.getElementById('wCat');
+    const title=document.getElementById('wTitle');
+    const desc=document.getElementById('wDesc');
+    const link=document.getElementById('wLink');
+    if(cat) cat.textContent=d.cat;
+    if(title) title.innerHTML=d.title2;
+    if(desc) desc.textContent=d.desc;
+    if(link) link.setAttribute('href',d.link);
+    panel.classList.remove('swap');
+  },170);
+}
 const aboutSW=document.getElementById('aboutStickyWrap');
 const aboutSticky=document.getElementById('aboutSticky');
 const aboutLabel=document.getElementById('aboutLabel');
-const aboutImg=document.getElementById('aboutImgArea');
-const aboutTxt=document.getElementById('aboutTextArea');
+const aboutContent=document.getElementById('aboutContent');
+
 const contactSW=document.getElementById('contactStickyWrap');
 const contactSt=document.getElementById('contactSticky');
 const contactIn=document.getElementById('contactInner');
@@ -97,7 +122,7 @@ function tick(){
       const wr=cl(ws/(worksSW.offsetHeight-vh));
       
       const isMobile = window.innerWidth <= 767;
-      const cardH = isMobile ? 380 : 400;
+      const cardH = isMobile ? 290 : 480;
       const cardGap = isMobile ? 16 : 40;
       const stepY = cardH + cardGap;
       
@@ -112,8 +137,9 @@ function tick(){
       const l=document.getElementById('progressLabel');
       const f=document.getElementById('progressFill');
       if(n) n.textContent=String(idx+1).padStart(2,'0');
-      if(l) l.textContent=wLabels[idx];
+      if(l) l.textContent=wData[idx].title;
       if(f) f.style.width=`${(idx+1)/TOTAL*100}%`;
+      if(idx!==lastWorksIdx){ lastWorksIdx=idx; updateWorksInfo(idx); }
     }
   }
  
@@ -122,21 +148,17 @@ function tick(){
     const as=sy-cachedAboutTop;
     if(as>=0){
       const ar=cl(as/(aboutSW.offsetHeight-vh));
- 
-      const lI=ph(ar,0,0.20), lO=ph(ar,0.25,0.20);
+      const lI=ph(ar,0,0.20), lO=ph(ar,0.30,0.16);
       aboutLabel.style.opacity=String(lI*(1-lO));
-      aboutLabel.style.transform=`translateY(${(1-lI)*20-lO*12}px)`;
- 
-      const imgI=ph(ar,0.30,0.25), imgO=ph(ar,0.60,0.20);
-      aboutImg.style.opacity=String(imgI*(1-imgO));
-      aboutImg.style.transform=`translateY(${(1-imgI)*-30-imgO*20}px)`;
- 
-      const txtI=ph(ar,0.65,0.25), txtO=ph(ar,0.90,0.10);
-      aboutTxt.style.opacity=String(txtI*(1-txtO));
-      aboutTxt.style.transform=`translateY(${(1-txtI)*30-txtO*20}px)`;
+      aboutLabel.style.transform=`translateY(${(1-lI)*20-lO*14}px)`;
+      const cI=ph(ar,0.42,0.30);
+      if(aboutContent){
+        aboutContent.style.opacity=String(cI);
+        aboutContent.style.transform=`translateY(${(1-cI)*26}px)`;
+      }
     }
   }
- 
+
   // ── Contact ──
   if(contactSW){
     const cs=sy-cachedContactTop;
