@@ -38,11 +38,11 @@ const wCards=Array.from(document.querySelectorAll('.w-card'));
 const TOTAL=wCards.length;
 const wLabels=['小児科サイトリニューアル','飲食店コーポレート','タトゥースタジオロゴ','LPデザイン','デッサン・グラフィック'];
 const wData=[
-  {cat:'Web Design',   title:'小児科サイトリニューアル', title2:'小児科サイト<br>リニューアル',   desc:'初めての受診でも迷わない。保護者の行動観察から導線を再設計した小児科サイト。', link:'works/index.html'},
-  {cat:'Web Design',   title:'飲食店コーポレート',       title2:'飲食店<br>コーポレート',         desc:'料理の魅力を静かに際立たせる、余白を活かしたコーポレートサイト。',           link:'works/project01.html'},
-  {cat:'Graphic',      title:'タトゥースタジオロゴ',     title2:'タトゥースタジオ<br>ロゴデザイン', desc:'闇と美をモチーフに、鋭さと静けさを込めたスタジオのロゴマーク。',             link:'works/project02.html'},
-  {cat:'Landing Page', title:'LPデザイン',               title2:'LP<br>デザイン',                 desc:'訴求を一直線に。行動につなげる構成にこだわったランディングページ。',         link:'works/project03.html'},
-  {cat:'Illustration', title:'デッサン・グラフィック',   title2:'デッサン<br>グラフィック',       desc:'手で捉えた光と陰影。観察の積み重ねから生まれたグラフィック表現。',           link:'works/project04.html'},
+  {cat:'Web Design',   title:'小児科サイトリニューアル', title2:'小児科サイト<br>リニューアル',   desc:'初めての受診でも迷わない。保護者の行動観察から導線を再設計した小児科サイト。', link:'works/pediatric.html'},
+  {cat:'Web Design',   title:'飲食店コーポレート',       title2:'飲食店<br>コーポレート',         desc:'料理の魅力を静かに際立たせる、余白を活かしたコーポレートサイト。',           link:'works/restaurant.html'},
+  {cat:'Graphic',      title:'タトゥースタジオロゴ',     title2:'タトゥースタジオ<br>ロゴデザイン', desc:'闇と美をモチーフに、鋭さと静けさを込めたスタジオのロゴマーク。',             link:'works/tattoo.html'},
+  {cat:'Landing Page', title:'LPデザイン',               title2:'LP<br>デザイン',                 desc:'訴求を一直線に。行動につなげる構成にこだわったランディングページ。',         link:'works/lp.html'},
+  {cat:'Illustration', title:'デッサン・グラフィック',   title2:'デッサン<br>グラフィック',       desc:'手で捉えた光と陰影。観察の積み重ねから生まれたグラフィック表現。',           link:'works/graphic.html'},
 ];
 let lastWorksIdx=-1;
 function updateWorksInfo(idx){
@@ -66,6 +66,8 @@ const aboutSW=document.getElementById('aboutStickyWrap');
 const aboutSticky=document.getElementById('aboutSticky');
 const aboutLabel=document.getElementById('aboutLabel');
 const aboutContent=document.getElementById('aboutContent');
+const aboutPortrait=aboutContent?aboutContent.querySelector('.about-portrait'):null;
+const aboutInfo=aboutContent?aboutContent.querySelector('.about-info'):null;
 
 const contactSW=document.getElementById('contactStickyWrap');
 const contactSt=document.getElementById('contactSticky');
@@ -148,13 +150,31 @@ function tick(){
     const as=sy-cachedAboutTop;
     if(as>=0){
       const ar=cl(as/(aboutSW.offsetHeight-vh));
-      const lI=ph(ar,0,0.20), lO=ph(ar,0.30,0.16);
+      const isMobileAbout=window.innerWidth<=767;
+      const lI=ph(ar,0,0.18);
+      const lO=isMobileAbout?ph(ar,0.22,0.12):ph(ar,0.30,0.16);
       aboutLabel.style.opacity=String(lI*(1-lO));
       aboutLabel.style.transform=`translateY(${(1-lI)*20-lO*14}px)`;
-      const cI=ph(ar,0.42,0.30);
-      if(aboutContent){
-        aboutContent.style.opacity=String(cI);
-        aboutContent.style.transform=`translateY(${(1-cI)*26}px)`;
+      if(isMobileAbout&&aboutPortrait&&aboutInfo){
+        // スマホ: About → 写真単品 → プロフィール単品 を全画面クロスフェード
+        aboutContent.style.opacity='1';
+        aboutContent.style.transform='none';
+        const pI=ph(ar,0.28,0.16);   // 写真フェードイン（ラベルの後）
+        const pO=ph(ar,0.48,0.12);   // 写真フェードアウト
+        const iI=ph(ar,0.60,0.24);   // プロフィールフェードイン（写真の後）
+        aboutPortrait.style.opacity=String(pI*(1-pO));
+        aboutPortrait.style.transform=`translateY(${(1-pI)*24-pO*20}px)`;
+        aboutInfo.style.opacity=String(iI);
+        aboutInfo.style.transform=`translateY(${(1-iI)*24}px)`;
+      } else {
+        const cI=ph(ar,0.42,0.30);
+        if(aboutContent){
+          aboutContent.style.opacity=String(cI);
+          aboutContent.style.transform=`translateY(${(1-cI)*26}px)`;
+        }
+        // リサイズでモバイル→PCに戻った際、子要素のインラインスタイルをリセット
+        if(aboutPortrait){aboutPortrait.style.opacity='';aboutPortrait.style.transform='';}
+        if(aboutInfo){aboutInfo.style.opacity='';aboutInfo.style.transform='';}
       }
     }
   }

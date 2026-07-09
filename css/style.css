@@ -253,7 +253,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:#f0ede8;overflow-x:hidden;
   display:flex;flex-direction:column;justify-content:center;align-items:center;
   background:#f0ede8;}
 .contact-sticky .particle-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;}
-.contact-inner{display:flex;flex-direction:column;align-items:center;gap:28px;
+.contact-inner{display:flex;flex-direction:column;align-items:center;gap:22px;
   text-align:center;padding:0 40px;opacity:1;transform:none;position:relative;z-index:100;}
 .contact-eyebrow{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;
   display:flex;align-items:center;gap:12px;}
@@ -261,11 +261,11 @@ body{font-family:'Noto Sans JP',sans-serif;background:#f0ede8;overflow-x:hidden;
 .contact-heading{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,6vw,72px);
   font-weight:200;letter-spacing:0.06em;line-height:1.1;color:#1a1816;}
 .contact-sub{font-size:12px;font-weight:300;line-height:1.9;max-width:320px;}
-.contact-links{display:flex;flex-direction:column;align-items:center;gap:0;width:100%;max-width:380px;}
+.contact-links{display:flex;flex-direction:column;align-items:stretch;gap:0;width:max-content;max-width:min(420px,100%);margin-top:6px;}
 .contact-email,.contact-sns-link{
-  display:flex;align-items:center;justify-content:space-between;
+  display:flex;align-items:center;justify-content:flex-start;
   width:100%;
-  padding:20px 0;
+  padding:18px 0;
   border-bottom:1px solid rgba(26,24,22,0.15);
   text-decoration:none;
   transition:opacity 0.3s;
@@ -288,13 +288,14 @@ body{font-family:'Noto Sans JP',sans-serif;background:#f0ede8;overflow-x:hidden;
   color:#1a1816;
 }
 .contact-link-icon{
-  font-size:18px;color:rgba(26,24,22,0.35);
+  font-size:16px;color:rgba(26,24,22,0.35);
   flex-shrink:0;
   display:inline-block;
   transition:transform 0.3s;
 }
 
 .contact-sns{display:none;}
+.contact-email:hover .contact-link-icon,.contact-sns-link:hover .contact-link-icon{transform:translateX(5px);}
 .contact-footer{position:absolute;bottom:36px;display:flex;justify-content:space-between;
   width:100%;padding:0 40px;z-index:100;}
 .contact-footer-txt{font-size:9px;letter-spacing:0.14em;text-transform:uppercase;}
@@ -323,22 +324,30 @@ body{font-family:'Noto Sans JP',sans-serif;background:#f0ede8;overflow-x:hidden;
   }
 
   .w-card{width:280px;height:380px;}
-  .about-sticky-wrap{height:200vh;}
+  .about-sticky-wrap{height:300vh;}
   .about-sticky{position:sticky;top:0;height:100vh;overflow:hidden;padding:0;display:block;}
   .about-label-text{font-size:clamp(40px,12vw,62px);}
   .about-label-overlay{display:flex;}
-  .about-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:10px;padding:64px 28px 32px;align-items:flex-start;grid-template-columns:none;}
-  .about-portrait{flex-direction:column;gap:10px;width:auto;align-self:flex-start;}
-  .about-info{width:100%;max-width:none;}
-  .about-eyebrow{margin-bottom:10px;}
-  .about-name-ja{margin-top:8px;}
+  .about-content{position:absolute;inset:0;display:block;padding:0;gap:0;overflow:visible;}
+  .about-portrait{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:16px;padding:0 24px;width:auto;opacity:0;will-change:opacity,transform;}
+  .about-info{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start;width:auto;max-width:none;padding:15vh 26px 8vh;overflow-y:auto;-webkit-overflow-scrolling:touch;opacity:0;will-change:opacity,transform;}
+  .about-eyebrow{margin-bottom:12px;}
+  .about-name-ja{margin-top:10px;font-size:12px;}
   .about-bio{display:none;}
   .about-side{gap:18px;}
-  .tl-item{padding-bottom:11px;}
-  .about-portrait-bg{width:118px;max-width:118px;max-height:none;}
-  .about-name{font-size:clamp(30px,8.5vw,40px);line-height:0.98;}
+  .tl{gap:0;}
+  .tl-item::after{top:13px;}
+  .tl-body{font-size:12.5px;line-height:1.6;}
+  .tl-year{margin-bottom:2px;}
+  .about-block-label{margin-bottom:12px;}
+  .about-profile-item{font-size:12.5px;line-height:2;}
+  .skill-tag{font-size:11px;padding:4px 12px;}
+  .about-portrait-cap{font-size:10px;}
+  .tl-item{padding-bottom:14px;}
+  .about-portrait-bg{width:min(76vw,340px);max-width:none;max-height:62vh;}
+  .about-name{font-size:clamp(30px,8.5vw,42px);line-height:0.98;}
   .about-name .nm-line{display:block;}
-  .about-detail{grid-template-columns:1fr;gap:14px;margin-top:12px;padding-top:12px;}
+  .about-detail{grid-template-columns:1fr;gap:16px;margin-top:16px;padding-top:16px;}
   .contact-inner{padding:0 24px;}
   .contact-heading{font-size:clamp(28px,8vw,48px);}
   .works-header{padding:0 24px;}

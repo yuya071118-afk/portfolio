@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suga Yuya — 小児科サイトリニューアル</title>
+<link rel="stylesheet" href="../css/case.css">
+</head>
+<body>
+
+<canvas id="waveCanvas"></canvas>
+<div class="case-cur" id="caseCur"></div>
+<div class="case-cur-r" id="caseCurR"></div>
+
+<header class="case-topbar">
+  <a class="case-back" href="../index.html#worksSection"><span class="cb-arrow">←</span>Works</a>
+  <button class="menu-btn" id="menuBtn" aria-label="menu"><span class="mbl"></span><span class="mbl"></span></button>
+</header>
+
+  <div class="menu-overlay" id="menuOverlay">
+    <nav class="menu-nav">
+      <a class="mni" href="../index.html"><span class="mni-num">01</span><span class="mni-label">Top</span><span class="mni-arrow">→</span></a>
+      <a class="mni" href="../index.html#worksSection"><span class="mni-num">02</span><span class="mni-label">Works</span><span class="mni-arrow">→</span></a>
+      <a class="mni" href="../index.html#aboutSection"><span class="mni-num">03</span><span class="mni-label">About</span><span class="mni-arrow">→</span></a>
+      <a class="mni" href="../index.html#contactSection"><span class="mni-num">04</span><span class="mni-label">Contact</span><span class="mni-arrow">→</span></a>
+    </nav>
+    <div class="menu-footer">
+      <a href="https://www.instagram.com/xi_941_" target="_blank" class="mfl">Instagram</a>
+      <a href="../index.html#contactSection" class="mfl">Contact</a>
+    </div>
+  </div>
+
+<main>
+  <section class="case-hero case-wrap reveal in">
+    <span class="case-eyebrow">Web Design · 2025</span>
+    <h1 class="case-title">小児科サイト<br>リニューアル</h1>
+    <p class="case-title-en">Pediatric Clinic — Website Renewal</p>
+  </section>
+
+  <div class="case-wrap reveal">
+    <div class="case-visual"><img src="../images/after01.jpg" alt="小児科サイトリニューアル"></div>
+  </div>
+
+  <section class="case-overview case-wrap reveal">
+    <p class="case-lead"><span class="lead-em">初めての受診でも、迷わない。</span>保護者が「今すぐ知りたいこと」へ最短で辿り着けるよう、実際の行動を観察しながら導線を組み直しました。診療時間・アクセス・受診の流れを軸に、不安を和らげる情報設計を心がけています。</p>
+    <div class="case-meta">
+      <div class="case-meta-row"><span class="case-meta-k">Category</span><span class="case-meta-v">Web Design</span></div>
+      <div class="case-meta-row"><span class="case-meta-k">Year</span><span class="case-meta-v">2025</span></div>
+      <div class="case-meta-row"><span class="case-meta-k">Role</span><span class="case-meta-v">Design, Coding</span></div>
+      <div class="case-meta-row"><span class="case-meta-k">Tools</span><span class="case-meta-v">Figma, HTML · CSS</span></div>
+    </div>
+  </section>
+
+  <section class="case-section case-wrap reveal">
+    <div class="case-sec-label"><span class="idx">01</span>課題 / The Challenge</div>
+    <p class="case-p">情報は揃っているのに、必要なものが探しにくい——。急いでいる保護者ほど迷ってしまう構造が課題でした。ページ間の関係も曖昧で、初めての人が全体像を掴みづらい状態でした。</p>
+  </section>
+
+  <section class="case-section case-wrap reveal">
+    <div class="case-sec-label"><span class="idx">02</span>アプローチ / The Approach</div>
+    <p class="case-p">よく参照される「診療時間」「アクセス」「受診の流れ」を上位に再配置。休診が一目で分かる時間表と、不安を先回りで解消する「はじめての方へ」を新設し、初診でも迷わない縦の導線に整理しました。</p>
+    <div class="case-grid">
+        <div class="slot"><span class="slot-label">トップページ ファーストビュー<br>スクリーンショットを配置</span></div>
+        <div class="slot"><span class="slot-label">診療時間・アクセス セクション<br>スクリーンショットを配置</span></div>
+    </div>
+  </section>
+
+  <footer class="case-footer case-wrap reveal">
+    <nav class="case-nav">
+      <a class="case-nav-item prev" href="graphic.html">
+        <span class="case-nav-k">← Prev</span>
+        <span class="case-nav-t">デッサン・グラフィック</span>
+      </a>
+      <div class="case-nav-mid"><a href="../index.html#worksSection">Works 一覧</a></div>
+      <a class="case-nav-item next" href="restaurant.html">
+        <span class="case-nav-k">Next →</span>
+        <span class="case-nav-t">飲食店コーポレート</span>
+      </a>
+    </nav>
+    <div class="case-copy"><span>Suga Yuya</span><span>© 2026</span></div>
+  </footer>
+</main>
+
+<script src="../js/wave.js"></script>
+<script src="../js/case.js"></script>
+</body>
+</html>
